@@ -1,1 +1,1 @@
-mvn exec:java -Dexec.mainClass=org.redlich.config.App
+mvn exec:java -Dexec.mainClass=org.redlich.dbclient.App
