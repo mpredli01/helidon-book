@@ -1,4 +1,4 @@
-package org.redlich.webserver;
+package org.redlich.dbclient;
 
 /**
  * Hello world!
@@ -6,6 +6,6 @@ package org.redlich.webserver;
  */
 public class App {
     public static void main( String[] args ) {
-        System.out.println( "Hello from the WebServer component" );
+        System.out.println( "Hello from the DBClient component" );
         }
     }
