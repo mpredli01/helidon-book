@@ -1,4 +1,4 @@
-package org.redlich;
+package org.redlich.webclient;
 
 import io.helidon.common.reactive.Single;
 import io.helidon.config.Config;

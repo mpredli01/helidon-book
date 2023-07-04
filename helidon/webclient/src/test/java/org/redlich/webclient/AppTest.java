@@ -1,4 +1,4 @@
-package org.redlich;
+package org.redlich.webclient;
 
 import static org.junit.Assert.assertTrue;
 

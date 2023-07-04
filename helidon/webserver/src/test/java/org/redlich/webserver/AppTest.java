@@ -1,4 +1,4 @@
-package org.redlich;
+package org.redlich.webserver;
 
 import static org.junit.Assert.assertTrue;
 
