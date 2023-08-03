@@ -1,0 +1,2 @@
+https://javapointers.com/java/java-ee/helidon-web-client-example-to-call-rest-api/
+

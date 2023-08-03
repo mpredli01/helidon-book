@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_11">
+    <output url="file://$MODULE_DIR$/target/classes" />
+    <output-test url="file://$MODULE_DIR$/target/test-classes" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
+      <excludeFolder url="file://$MODULE_DIR$/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: io.helidon.metrics:helidon-metrics-service-api:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.helidon.common:helidon-common:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.helidon.metrics:helidon-metrics-api:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.helidon.service-common:helidon-service-common-rest:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.helidon.tracing:helidon-tracing:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.helidon.common:helidon-common-service-loader:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.helidon.config:helidon-config:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.helidon.common:helidon-common-media-type:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.helidon.tracing:helidon-tracing-zipkin:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.helidon.tracing:helidon-tracing-opentracing:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.opentracing:opentracing-util:0.33.0" level="project" />
+    <orderEntry type="library" name="Maven: io.opentracing:opentracing-noop:0.33.0" level="project" />
+    <orderEntry type="library" name="Maven: io.zipkin.reporter2:zipkin-sender-urlconnection:2.12.0" level="project" />
+    <orderEntry type="library" name="Maven: io.zipkin.reporter2:zipkin-reporter:2.12.0" level="project" />
+    <orderEntry type="library" name="Maven: io.zipkin.zipkin2:zipkin:2.19.0" level="project" />
+    <orderEntry type="library" name="Maven: io.opentracing.brave:brave-opentracing:1.0.0" level="project" />
+    <orderEntry type="library" name="Maven: io.zipkin.brave:brave:5.13.3" level="project" />
+    <orderEntry type="library" name="Maven: io.zipkin.reporter2:zipkin-reporter-brave:2.16.3" level="project" />
+    <orderEntry type="library" name="Maven: io.helidon.dbclient:helidon-dbclient-jdbc:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.helidon.dbclient:helidon-dbclient:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.helidon.common:helidon-common-mapper:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.helidon.dbclient:helidon-dbclient-common:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.helidon.common:helidon-common-configurable:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: com.zaxxer:HikariCP:5.0.1" level="project" />
+    <orderEntry type="library" name="Maven: io.helidon.dbclient:helidon-dbclient-tracing:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.helidon.tracing:helidon-tracing-config:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.opentracing:opentracing-api:0.33.0" level="project" />
+    <orderEntry type="library" name="Maven: io.helidon.dbclient:helidon-dbclient-metrics:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.helidon.dbclient:helidon-dbclient-metrics-jdbc:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.dropwizard.metrics:metrics-core:4.1.2" level="project" />
+    <orderEntry type="library" name="Maven: io.helidon.dbclient:helidon-dbclient-health:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.helidon.dbclient:helidon-dbclient-jsonp:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.parsson:parsson:1.0.2" level="project" />
+    <orderEntry type="library" name="Maven: io.helidon.integrations.db:ojdbc:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: com.oracle.database.jdbc:ojdbc8:21.3.0.0" level="project" />
+    <orderEntry type="library" name="Maven: com.oracle.database.jdbc:rsi:21.3.0.0" level="project" />
+    <orderEntry type="library" name="Maven: com.oracle.database.security:oraclepki:21.3.0.0" level="project" />
+    <orderEntry type="library" name="Maven: com.oracle.database.security:osdt_core:21.3.0.0" level="project" />
+    <orderEntry type="library" name="Maven: com.oracle.database.security:osdt_cert:21.3.0.0" level="project" />
+    <orderEntry type="library" name="Maven: com.oracle.database.ha:simplefan:21.3.0.0" level="project" />
+    <orderEntry type="library" name="Maven: com.oracle.database.ha:ons:21.3.0.0" level="project" />
+    <orderEntry type="library" name="Maven: com.oracle.database.nls:orai18n:21.3.0.0" level="project" />
+    <orderEntry type="library" name="Maven: com.oracle.database.xml:xdb:21.3.0.0" level="project" />
+    <orderEntry type="library" name="Maven: com.oracle.database.xml:xmlparserv2:21.3.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-jdk14:2.0.7" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:2.0.7" level="project" />
+    <orderEntry type="module" module-name="dbclient-common" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: io.helidon.metrics:helidon-metrics:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.microprofile.metrics:microprofile-metrics-api:4.0" level="project" />
+    <orderEntry type="library" name="Maven: io.helidon.webserver:helidon-webserver-cors:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.helidon.webserver:helidon-webserver:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.helidon.common:helidon-common-reactive:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.helidon.common:helidon-common-http:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.helidon.media:helidon-media-common:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.helidon.common:helidon-common-key-util:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.helidon.logging:helidon-logging-common:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-codec-http:4.1.94.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-common:4.1.94.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-transport:4.1.94.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-codec:4.1.94.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-handler:4.1.94.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-resolver:4.1.94.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-transport-native-unix-common:4.1.94.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.helidon.webclient:helidon-webclient:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.helidon.common:helidon-common-context:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-buffer:4.1.94.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-handler-proxy:4.1.94.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-codec-socks:4.1.94.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-resolver-dns:4.1.94.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-codec-dns:4.1.94.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.helidon.config:helidon-config-yaml:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: org.yaml:snakeyaml:2.0" level="project" />
+    <orderEntry type="library" name="Maven: jakarta.annotation:jakarta.annotation-api:2.0.0" level="project" />
+    <orderEntry type="library" name="Maven: io.helidon.media:helidon-media-jsonp:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: jakarta.json:jakarta.json-api:2.0.1" level="project" />
+    <orderEntry type="library" name="Maven: io.helidon.media:helidon-media-jsonb:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse:yasson:2.0.4" level="project" />
+    <orderEntry type="library" name="Maven: jakarta.json.bind:jakarta.json.bind-api:2.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish:jakarta.json:module:2.0.0" level="project" />
+    <orderEntry type="library" name="Maven: io.helidon.health:helidon-health:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.helidon.fault-tolerance:helidon-fault-tolerance:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.microprofile.health:microprofile-health-api:4.0" level="project" />
+    <orderEntry type="library" name="Maven: io.helidon.health:helidon-health-checks:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.helidon.health:helidon-health-common:3.2.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.13.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />
+  </component>
+</module>
