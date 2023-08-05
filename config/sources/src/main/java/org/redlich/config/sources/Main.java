@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017, 2021 Oracle and/or its affiliates.
+ * Copyright (c) 2017, 2023 Oracle and/or its affiliates.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ package org.redlich.config.sources;
 public class Main {
 
     private Main() {
-    }
+        }
 
     /**
      * Executes the example.
@@ -33,6 +33,5 @@ public class Main {
         WithSourcesExample.main(args);
         LoadSourcesExample.main(args);
         DirectorySourceExample.main(args);
+        }
     }
-
-}

@@ -16,13 +16,19 @@
 
 package org.redlich.webclient;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lombok.Data;
+import static org.junit.Assert.assertTrue;
 
-@Data
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class Name {
+import org.junit.Test;
 
-    private String common;
-    private String official;
+/**
+ * Unit test for simple App.
+ */
+public class TestMain {
+    /**
+     * Rigorous Test :-)
+     */
+    @Test
+    public void shouldAnswerWithTrue() {
+        assertTrue( true );
+        }
     }

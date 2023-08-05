@@ -1,3 +1,19 @@
+/*
+ * Copyright (c) 2017, 2023 Oracle and/or its affiliates.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package org.redlich.dbclient.pokemons;
 
 import io.helidon.common.LogConfig;
@@ -43,12 +59,13 @@ public final class PokemonMain {
         if (args != null && args.length > 0 && args[0] != null && "mongo".equals(args[0].toLowerCase())) {
             System.out.println("MongoDB database selected");
             mongo = true;
-        } else {
+            }
+        else {
             System.out.println("JDBC database selected");
             mongo = false;
-        }
+            }
         startServer();
-    }
+        }
 
     /**
      * Start the server.
@@ -82,7 +99,7 @@ public final class PokemonMain {
                 .thenRun(() -> System.out.println("WEB server is DOWN. Good bye!"));
 
         return server;
-    }
+        }
 
     /**
      * Creates new {@link io.helidon.webserver.Routing}.
@@ -96,10 +113,10 @@ public final class PokemonMain {
         // Client services are added through a service loader - see mongoDB example for explicit services
         DbClient dbClient = DbClient.builder(dbConfig)
                 .build();
+
         // Some relational databases do not support DML statement as ping so using query which works for all of them
         HealthSupport health = HealthSupport.builder()
-                .addLiveness(
-                        DbClientHealthCheck.create(dbClient, dbConfig.get("health-check")))
+                .addLiveness(DbClientHealthCheck.create(dbClient, dbConfig.get("health-check")))
                 .build();
 
         // Initialize database schema
@@ -110,5 +127,5 @@ public final class PokemonMain {
                 .register(MetricsSupport.create())  // Metrics at "/metrics"
                 .register("/db", new PokemonService(dbClient))
                 .build();
+        }
     }
-}

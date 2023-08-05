@@ -1,3 +1,19 @@
+/*
+ * Copyright (c) 2017, 2023 Oracle and/or its affiliates.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package org.redlich.dbclient.jdbc;
 
 import io.helidon.common.LogConfig;
@@ -21,7 +37,7 @@ public final class JdbcExampleMain {
      * Cannot be instantiated.
      */
     private JdbcExampleMain() {
-    }
+        }
 
     /**
      * Application main entry point.
@@ -30,7 +46,7 @@ public final class JdbcExampleMain {
      */
     public static void main(final String[] args) {
         startServer();
-    }
+        }
 
     /**
      * Start the server.
@@ -59,13 +75,13 @@ public final class JdbcExampleMain {
         server.start().thenAccept(ws -> {
             System.out.println(
                     "WEB server is up! http://localhost:" + ws.port() + "/");
-        });
+            });
 
         // Server threads are not daemon. NO need to block. Just react.
         server.whenShutdown().thenRun(() -> System.out.println("WEB server is DOWN. Good bye!"));
 
         return server;
-    }
+        }
 
     /**
      * Creates new {@link io.helidon.webserver.Routing}.
@@ -82,8 +98,7 @@ public final class JdbcExampleMain {
 
         // Some relational databases do not support DML statement as ping so using query which works for all of them
         HealthSupport health = HealthSupport.builder()
-                .addLiveness(
-                        DbClientHealthCheck.create(dbClient, dbConfig.get("health-check")))
+                .addLiveness(DbClientHealthCheck.create(dbClient, dbConfig.get("health-check")))
                 .build();
 
         return Routing.builder()
@@ -91,5 +106,5 @@ public final class JdbcExampleMain {
                 .register(MetricsSupport.create())  // Metrics at "/metrics"
                 .register("/db", new PokemonService(dbClient))
                 .build();
+        }
     }
-}

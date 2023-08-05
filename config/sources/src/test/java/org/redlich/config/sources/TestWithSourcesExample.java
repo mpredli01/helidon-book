@@ -22,59 +22,54 @@ import io.helidon.config.ConfigValue;
 import static io.helidon.config.ConfigSources.classpath;
 import static io.helidon.config.ConfigSources.file;
 
-/**
- * This example shows how to merge the configuration from different sources
- * loaded from meta configuration.
- *
- * @see WithSourcesExample
- */
-public class LoadSourcesExample {
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
-    private LoadSourcesExample() {
-        }
+public class TestWithSourcesExample {
 
-    /**
-     * Executes the example.
-     *
-     * @param args arguments
+     /*
+       Creates a config source composed of following sources:
+       - conf/dev.yaml - developer specific configuration, should not be placed in VCS;
+       - conf/config.yaml - deployment dependent configuration, for example prod, stage, etc;
+       - default.yaml - application default values, loaded form classpath;
+       with a filter which convert values with keys ending with "level" to upper case
      */
-    public static void main(String... args) {
-        /*
-         * Creates a configuration from list of config sources loaded from meta sources:
-         *  - conf/meta-config.yaml - - deployment dependent meta-config file, loaded from file on filesystem;
-         *  - meta-config.yaml - application default meta-config file, loaded form classpath;
-         * with a filter which convert values with keys ending with "level" to upper case
-         */
 
-        System.out.println("--- LoadSourcesExample ---");
-
-        Config metaConfig = Config.create(file("conf/meta-config.yaml").optional(),
-                classpath("meta-config.yaml"));
-
-        Config config = Config.builder()
-                .config(metaConfig)
+    @BeforeAll
+    public Config getConfig() {
+        Config config = Config
+                .builder(file("conf/dev.yaml").optional(),
+                        file("conf/config.yaml").optional(),
+                        classpath("default.yaml"))
                 .addFilter((key, stringValue) -> key.name().equals("level") ? stringValue.toUpperCase() : stringValue)
                 .build();
+        return config;
+        }
 
-        // Optional environment type, from dev.yaml:
+    @Test
+    public void testWithSourcesExample() {
+        Config config = getConfig();
+
+        // environment type, from dev.yaml:
         ConfigValue<String> env = config.get("meta.env").asString();
         env.ifPresent(e -> System.out.println("Environment: " + e));
         assert env.get().equals("DEV");
 
-        // Default value (default.yaml): Config Sources Example
+        // default value (default.yaml): Config Sources Example
         String appName = config.get("app.name").asString().get();
         System.out.println("Name: " + appName);
         assert appName.equals("Config Sources Example");
 
-        // Page size, from config.yaml: 10
+        // page size, from config.yaml: 10
         int pageSize = config.get("app.page-size").asInt().get();
         System.out.println("Page size: " + pageSize);
         assert pageSize == 10;
 
-        // Applied filter (uppercase logging level), from dev.yaml: finest -> FINEST
+        // applied filter (uppercase logging level), from dev.yaml: finest -> FINEST
         String level = config.get("component.audit.logging.level").asString().get();
         System.out.println("Level: " + level);
         assert level.equals("FINE");
     }
-
 }

@@ -1,3 +1,19 @@
+/*
+ * Copyright (c) 2017, 2023 Oracle and/or its affiliates.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package org.redlich.config.sources;
 
 import io.helidon.config.Config;
@@ -14,7 +30,7 @@ import static io.helidon.config.ConfigSources.file;
 public class WithSourcesExample {
 
     private WithSourcesExample() {
-    }
+        }
 
     /**
      * Executes the example.
@@ -23,11 +39,11 @@ public class WithSourcesExample {
      */
     public static void main(String... args) {
         /*
-           Creates a config source composed of following sources:
-           - conf/dev.yaml - developer specific configuration, should not be placed in VCS;
-           - conf/config.yaml - deployment dependent configuration, for example prod, stage, etc;
-           - default.yaml - application default values, loaded form classpath;
-           with a filter which convert values with keys ending with "level" to upper case
+         * Creates a config source composed of following sources:
+         *  - conf/dev.yaml - developer specific configuration, should not be placed in VCS;
+         *  - conf/config.yaml - deployment dependent configuration, for example prod, stage, etc;
+         *  - default.yaml - application default values, loaded form classpath;
+         * with a filter which convert values with keys ending with "level" to upper case
          */
 
         System.out.println("--- WithSourcesExample ---");

@@ -1,3 +1,19 @@
+/*
+ * Copyright (c) 2017, 2023 Oracle and/or its affiliates.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package org.redlich.dbclient.common;
 
 import java.util.concurrent.CompletionException;
@@ -52,7 +68,7 @@ public abstract class AbstractPokemonService implements Service {
                 .put("/transactional", Handler.create(Pokemon.class, this::transactional))
                 // update one (TODO this is intentionally wrong - should use JSON request, just to make it simple we use path)
                 .put("/{name}/type/{type}", this::updatePokemonType);
-    }
+        }
 
     /**
      * The DB client associated with this service.
@@ -61,7 +77,7 @@ public abstract class AbstractPokemonService implements Service {
      */
     protected DbClient dbClient() {
         return dbClient;
-    }
+        }
 
     /**
      * This method is left unimplemented to show differences between native statements that can be used.
@@ -84,7 +100,7 @@ public abstract class AbstractPokemonService implements Service {
                         .execute())
                 .thenAccept(count -> response.send("Inserted: " + count + " values"))
                 .exceptionally(throwable -> sendError(throwable, response));
-    }
+        }
 
     /**
      * Insert new pokemon with specified name.
@@ -102,7 +118,7 @@ public abstract class AbstractPokemonService implements Service {
                         .execute())
                 .thenAccept(count -> response.send("Inserted: " + count + " values"))
                 .exceptionally(throwable -> sendError(throwable, response));
-    }
+        }
 
     /**
      * Get a single pokemon by name.
@@ -119,7 +135,7 @@ public abstract class AbstractPokemonService implements Service {
                                 + pokemonName
                                 + " not found")))
                 .exceptionally(throwable -> sendError(throwable, response));
-    }
+        }
 
     /**
      * Return JsonArray with all stored pokemons or pokemons with matching attributes.
@@ -132,7 +148,7 @@ public abstract class AbstractPokemonService implements Service {
                 .map(it -> it.as(JsonObject.class));
 
         response.send(rows, JsonObject.class);
-    }
+        }
 
     /**
      * Update a pokemon.
@@ -152,7 +168,7 @@ public abstract class AbstractPokemonService implements Service {
                         .execute())
                 .thenAccept(count -> response.send("Updated: " + count + " values"))
                 .exceptionally(throwable -> sendError(throwable, response));
-    }
+        }
 
     private void transactional(ServerRequest request, ServerResponse response, Pokemon pokemon) {
 
@@ -163,9 +179,8 @@ public abstract class AbstractPokemonService implements Service {
                 .flatMapSingle(maybeRow -> maybeRow.map(dbRow -> tx.createNamedUpdate("update")
                                 .namedParam(pokemon).execute())
                         .orElseGet(() -> Single.just(0L)))
-        ).thenAccept(count -> response.send("Updated " + count + " records"));
-
-    }
+            ).thenAccept(count -> response.send("Updated " + count + " records"));
+        }
 
     /**
      * Delete pokemon with specified name (key).
@@ -179,7 +194,7 @@ public abstract class AbstractPokemonService implements Service {
         dbClient.execute(exec -> exec.namedDelete("delete", name))
                 .thenAccept(count -> response.send("Deleted: " + count + " values"))
                 .exceptionally(throwable -> sendError(throwable, response));
-    }
+        }
 
     /**
      * Send a 404 status code.
@@ -190,7 +205,7 @@ public abstract class AbstractPokemonService implements Service {
     protected void sendNotFound(ServerResponse response, String message) {
         response.status(Http.Status.NOT_FOUND_404);
         response.send(message);
-    }
+        }
 
     /**
      * Send a single DB row as JSON object.
@@ -215,11 +230,10 @@ public abstract class AbstractPokemonService implements Service {
         Throwable realCause = throwable;
         if (throwable instanceof CompletionException) {
             realCause = throwable.getCause();
-        }
+            }
         response.status(Http.Status.INTERNAL_SERVER_ERROR_500);
         response.send("Failed to process request: " + realCause.getClass().getName() + "(" + realCause.getMessage() + ")");
         LOGGER.log(Level.WARNING, "Failed to process request", throwable);
         return null;
+        }
     }
-
-}

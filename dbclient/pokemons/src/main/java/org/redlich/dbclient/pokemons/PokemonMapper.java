@@ -1,3 +1,19 @@
+/*
+ * Copyright (c) 2017, 2023 Oracle and/or its affiliates.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package org.redlich.dbclient.pokemons;
 
 import java.util.ArrayList;
@@ -20,7 +36,7 @@ public class PokemonMapper implements DbMapper<Pokemon> {
         DbColumn name = row.column("name");
         DbColumn type = row.column("idType");
         return new Pokemon(id.as(Integer.class), name.as(String.class), type.as(Integer.class));
-    }
+        }
 
     @Override
     public Map<String, Object> toNamedParameters(Pokemon value) {
@@ -29,7 +45,7 @@ public class PokemonMapper implements DbMapper<Pokemon> {
         map.put("name", value.getName());
         map.put("idType", value.getIdType());
         return map;
-    }
+        }
 
     @Override
     public List<Object> toIndexedParameters(Pokemon value) {
@@ -38,5 +54,5 @@ public class PokemonMapper implements DbMapper<Pokemon> {
         list.add(value.getName());
         list.add(value.getIdType());
         return list;
+        }
     }
-}
