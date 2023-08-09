@@ -13,8 +13,8 @@
     <artifactId>dbclient-pokemons</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>Helidon DBClient Example (Pokemons)</name>
-    <description>Example using Pokemons database</description>
+    <name>Helidon DBClient Example (Pokémons)</name>
+    <description>Example using Pokémons database</description>
     <url>https://redlich.net</url>
 
     <properties>
@@ -22,6 +22,7 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <helidon.version>3.2.2</helidon.version>
+        <exec.mojo.version>3.1.0</exec.mojo.version>
         <junit.version>4.13.2</junit.version>
         <mainClass>org.redlich.dbclient.pokemons.PokemonMain</mainClass>
         <arg>jdbc</arg>
@@ -143,6 +144,14 @@
                         <id>copy-libs</id>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>${exec.mojo.version}</version>
+                <configuration>
+                    <mainClass>${mainClass}</mainClass>
+                </configuration>
             </plugin>
         </plugins>
     </build>

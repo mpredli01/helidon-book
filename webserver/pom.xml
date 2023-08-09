@@ -22,6 +22,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
+    <exec.mojo.version>3.1.0</exec.mojo.version>
     <mainClass>org.redlich.webserver.Main</mainClass>
   </properties>
 
@@ -29,7 +30,7 @@
   </dependencies>
 
   <build>
-    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (this may be moved to the parent POM) -->
       <plugins>
         <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
         <plugin>
@@ -73,9 +74,9 @@
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>exec-maven-plugin</artifactId>
-          <version>3.0.0</version>
+          <version>${exec.mojo.version}</version>
           <configuration>
-            <mainClass>org.redlich.webserver.Main</mainClass>
+            <mainClass>${mainClass}</mainClass>
           </configuration>
         </plugin>
       </plugins>

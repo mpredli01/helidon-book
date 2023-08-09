@@ -23,6 +23,7 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <helidon.version>3.2.2</helidon.version>
+        <exec.mojo.version>3.1.0</exec.mojo.version>
         <junit.version>4.13.2</junit.version>
         <mainClass>org.redlich.dbclient.mongodb.MongoDbExampleMain</mainClass>
     </properties>
@@ -120,15 +121,15 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
-                <version>3.1.0</version>
+                <version>${exec.mojo.version}</version>
                 <configuration>
-                    <executable>java</executable>
-                    <arguments>
+                    <!-- <executable>java</executable> -->
+                    <!-- <arguments> -->
                         <!-- <argument>classpath</argument> -->
                         <!-- automatically adds classpath -->
                         <!-- <classpath/> -->
                         <mainClass>${mainClass}</mainClass>
-                    </arguments>
+                    <!-- </arguments> -->
                 </configuration>
             </plugin>
         </plugins>

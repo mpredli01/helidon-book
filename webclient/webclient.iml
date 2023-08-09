@@ -21,7 +21,7 @@
     <orderEntry type="library" name="Maven: io.helidon.common:helidon-common-http:3.2.2" level="project" />
     <orderEntry type="library" name="Maven: io.helidon.media:helidon-media-common:3.2.2" level="project" />
     <orderEntry type="library" name="Maven: io.helidon.common:helidon-common-mapper:3.2.2" level="project" />
-    <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.18.22" level="project" />
+    <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.18.26" level="project" />
     <orderEntry type="library" name="Maven: io.helidon.webserver:helidon-webserver:3.2.2" level="project" />
     <orderEntry type="library" name="Maven: io.helidon.common:helidon-common-reactive:3.2.2" level="project" />
     <orderEntry type="library" name="Maven: io.helidon.common:helidon-common:3.2.2" level="project" />

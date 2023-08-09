@@ -18,6 +18,7 @@
     <url>https://redlich.net</url>
 
     <properties>
+        <exec.mojo.version>3.1.0</exec.mojo.version>
         <mainClass>org.redlich.config.sources.Main</mainClass>
     </properties>
 
@@ -44,6 +45,14 @@
                         <id>copy-libs</id>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>${exec.mojo.version}</version>
+                <configuration>
+                    <mainClass>${mainClass}</mainClass>
+                </configuration>
             </plugin>
         </plugins>
     </build>

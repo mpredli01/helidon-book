@@ -33,9 +33,6 @@
     <orderEntry type="library" name="Maven: io.netty:netty-handler:4.1.94.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-resolver:4.1.94.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-transport-native-unix-common:4.1.94.Final" level="project" />
-    <orderEntry type="library" name="Maven: io.helidon.media:helidon-media-jsonp:3.2.2" level="project" />
-    <orderEntry type="library" name="Maven: jakarta.json:jakarta.json-api:2.0.1" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.parsson:parsson:1.0.2" level="project" />
     <orderEntry type="library" name="Maven: io.helidon.webclient:helidon-webclient:3.2.2" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-buffer:4.1.94.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-handler-proxy:4.1.94.Final" level="project" />
@@ -51,6 +48,9 @@
     <orderEntry type="library" name="Maven: org.eclipse.microprofile.metrics:microprofile-metrics-api:4.0" level="project" />
     <orderEntry type="library" name="Maven: io.helidon.webserver:helidon-webserver-cors:3.2.2" level="project" />
     <orderEntry type="library" name="Maven: io.helidon.service-common:helidon-service-common-rest:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.helidon.media:helidon-media-jsonp:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: jakarta.json:jakarta.json-api:2.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.parsson:parsson:1.0.2" level="project" />
     <orderEntry type="library" name="Maven: io.helidon.media:helidon-media-jsonb:3.2.2" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse:yasson:2.0.4" level="project" />
     <orderEntry type="library" name="Maven: jakarta.json.bind:jakarta.json.bind-api:2.0.0" level="project" />
