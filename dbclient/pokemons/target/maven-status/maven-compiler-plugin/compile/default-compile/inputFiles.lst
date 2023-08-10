@@ -1,0 +1,6 @@
+/usr/local/publications/helidon-book/dbclient/pokemons/src/main/java/org/redlich/dbclient/pokemons/PokemonMapper.java
+/usr/local/publications/helidon-book/dbclient/pokemons/src/main/java/org/redlich/dbclient/pokemons/InitializeDb.java
+/usr/local/publications/helidon-book/dbclient/pokemons/src/main/java/org/redlich/dbclient/pokemons/Pokemon.java
+/usr/local/publications/helidon-book/dbclient/pokemons/src/main/java/org/redlich/dbclient/pokemons/PokemonMapperProvider.java
+/usr/local/publications/helidon-book/dbclient/pokemons/src/main/java/org/redlich/dbclient/pokemons/PokemonMain.java
+/usr/local/publications/helidon-book/dbclient/pokemons/src/main/java/org/redlich/dbclient/pokemons/PokemonService.java

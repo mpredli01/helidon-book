@@ -1,5 +1,5 @@
-# Helidon DBClient Examples
-## Chapter 8: Helidon DBClient
-## Helidon Revealed: A Practical Guide to Getting Started with Oracle’s Microservices Framework
+# Helidon Revealed
+## A Practical Guide to Getting Started with Oracle's Microservices Framework
+## Chapter 8: Helidon DBClient Component
 
-This example demonstrates how to use the Helidon DBClient component
+In this chapter, you will learn how to connect to and query relational and NoSQL databases.

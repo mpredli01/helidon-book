@@ -1,5 +1,5 @@
-# Helidon WebClient Examples
-## Chapter 6: Helidon WebClient
-## Helidon Revealed: A Practical Guide to Getting Started with Oracle’s Microservices Framework
+# Helidon Revealed
+## A Practical Guide to Getting Started with Oracle's Microservices Framework
+## Chapter 6: Helidon WebClient Component
 
-This example demonstrates how to initiate the Helidon WebClient component
+In this chapter, you will learn how to initiate the Helidon web client.
