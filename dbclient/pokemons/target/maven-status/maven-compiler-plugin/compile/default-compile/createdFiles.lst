@@ -1,6 +1,0 @@
-org/redlich/dbclient/pokemons/PokemonMain.class
-org/redlich/dbclient/pokemons/Pokemon.class
-org/redlich/dbclient/pokemons/InitializeDb.class
-org/redlich/dbclient/pokemons/PokemonMapper.class
-org/redlich/dbclient/pokemons/PokemonMapperProvider.class
-org/redlich/dbclient/pokemons/PokemonService.class

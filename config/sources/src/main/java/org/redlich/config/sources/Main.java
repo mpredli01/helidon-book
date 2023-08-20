@@ -16,6 +16,8 @@
 
 package org.redlich.config.sources;
 
+import io.helidon.common.LogConfig;
+
 /**
  * Runs every example main class in this module/package.
  */
@@ -30,8 +32,26 @@ public class Main {
      * @param args arguments
      */
     public static void main(String[] args) {
+        LogConfig.configureRuntime();
+        displaySplashScreen();
         WithSourcesExample.main(args);
         LoadSourcesExample.main(args);
         DirectorySourceExample.main(args);
+        }
+
+    public static void displaySplashScreen() {
+        String title = " Helidon Config Example (Sources) ";
+        int length = title.length();
+
+        System.out.println();
+        System.out.print("[APP] ");
+        for (int i = 0; i < length; ++i)
+            System.out.print("-");
+        System.out.println();
+        System.out.println("[APP] " + title);
+        System.out.print("[APP] ");
+        for (int i = 0; i < length; ++i)
+            System.out.print("-");
+        System.out.println();
         }
     }

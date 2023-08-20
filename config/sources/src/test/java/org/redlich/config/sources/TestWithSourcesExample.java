@@ -59,12 +59,10 @@ public class TestWithSourcesExample {
 
         // default value (default.yaml): Config Sources Example
         String appName = config.get("app.name").asString().get();
-        System.out.println("Name: " + appName);
         assert appName.equals("Config Sources Example");
 
         // page size, from config.yaml: 10
         int pageSize = config.get("app.page-size").asInt().get();
-        System.out.println("Page size: " + pageSize);
         assert pageSize == 10;
 
         // applied filter (uppercase logging level), from dev.yaml: finest -> FINEST

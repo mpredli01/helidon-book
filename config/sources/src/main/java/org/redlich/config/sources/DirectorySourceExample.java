@@ -16,6 +16,7 @@
 
 package org.redlich.config.sources;
 
+import io.helidon.common.LogConfig;
 import io.helidon.config.Config;
 
 import static io.helidon.config.ConfigSources.directory;
@@ -34,21 +35,36 @@ public class DirectorySourceExample {
      * @param args arguments
      */
     public static void main(String... args) {
+        displaySplashScreen();
 
-        System.out.println("--- DirectorySourceExample ---");
-
-       // creates a config from files from specified directory, e.g., Kubernetes Secrets
+        // creates a config from files from specified directory, e.g., Kubernetes Secrets
         Config secrets = Config.builder(directory("conf/secrets"))
                 .disableEnvironmentVariablesSource()
                 .disableSystemPropertiesSource()
                 .build();
 
         String username = secrets.get("username").asString().get();
-        System.out.println("Username: " + username);
-        assert username.equals("libor");
-
         String password = secrets.get("password").asString().get();
-        System.out.println("Password: " + password);
-        assert password.equals("^ery$ecretP&ssword");
+
+        System.out.println("[APP] Username: " + username);
+        System.out.println("[APP] Password: " + password);
+        System.out.println();
         }
+
+    public static void displaySplashScreen() {
+        String title = " Directory Source Example ";
+        int length = title.length();
+
+        System.out.println();
+        System.out.print("[APP] ");
+        for (int i = 0; i < length; ++i)
+            System.out.print("-");
+        System.out.println();
+        System.out.println("[APP] " + title);
+        System.out.print("[APP] ");
+        for (int i = 0; i < length; ++i)
+            System.out.print("-");
+        System.out.println();
     }
+
+}

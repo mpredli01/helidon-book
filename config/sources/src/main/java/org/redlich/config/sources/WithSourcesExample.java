@@ -46,7 +46,7 @@ public class WithSourcesExample {
          * with a filter which convert values with keys ending with "level" to upper case
          */
 
-        System.out.println("--- WithSourcesExample ---");
+        displaySplashScreen();
 
         Config config = Config
                 .builder(file("conf/dev.yaml").optional(),
@@ -57,22 +57,33 @@ public class WithSourcesExample {
 
         // Environment type, from dev.yaml:
         ConfigValue<String> env = config.get("meta.env").asString();
-        env.ifPresent(e -> System.out.println("Environment: " + e));
-        assert env.get().equals("DEV");
-
         // Default value (default.yaml): Config Sources Example
         String appName = config.get("app.name").asString().get();
-        System.out.println("Name: " + appName);
-        assert appName.equals("Config Sources Example");
-
         // Page size, from config.yaml: 10
         int pageSize = config.get("app.page-size").asInt().get();
-        System.out.println("Page size: " + pageSize);
-        assert pageSize == 10;
-
         // Applied filter (uppercase logging level), from dev.yaml: finest -> FINEST
         String level = config.get("component.audit.logging.level").asString().get();
-        System.out.println("Level: " + level);
-        assert level.equals("FINE");
+
+        env.ifPresent(e -> System.out.println("[APP] Environment: " + e));
+        System.out.println("[APP] Name: " + appName);
+        System.out.println("[APP] Page size: " + pageSize);
+        System.out.println("[APP] Level: " + level);
+        System.out.println();
+        }
+
+    public static void displaySplashScreen() {
+        String title = " With Sources Example ";
+        int length = title.length();
+
+        System.out.println();
+        System.out.print("[APP] ");
+        for (int i = 0; i < length; ++i)
+            System.out.print("-");
+        System.out.println();
+        System.out.println("[APP] " + title);
+        System.out.print("[APP] ");
+        for (int i = 0; i < length; ++i)
+            System.out.print("-");
+        System.out.println();
         }
     }

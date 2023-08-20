@@ -43,8 +43,7 @@ public class Main {
 
         // Start the server and print some information
         server.start().thenAccept(ws -> {
-            System.out.println(
-                    "WEB server is up! http://localhost:" + ws.port() + "/");
+            System.out.println("WEB server is up! http://localhost:" + ws.port() + "/");
             });
 
         // Server threads are not daemon. There is NO need to block, just react.

@@ -19,6 +19,7 @@ package org.redlich.config.basic;
 import java.nio.file.Path;
 import java.util.List;
 
+import io.helidon.common.LogConfig;
 import io.helidon.config.Config;
 
 import static io.helidon.config.ConfigSources.classpath;
@@ -37,15 +38,43 @@ public class Main {
      * @param args arguments
      */
     public static void main(String... args) {
-        Config config = Config.create(classpath("application.conf"));
+
+        // Load logging configuration
+        LogConfig.configureRuntime();
+
+        displaySplashScreen();
+
+        final String configFile = "application.conf";
+
+        Config config = Config.create(classpath(configFile));
+        System.out.println("[APP] Reading configuration from '" + configFile + "'");
+
+        
         int pageSize = config.get("app.page-size").asInt().get();
         boolean storageEnabled = config.get("app.storageEnabled").asBoolean().orElse(false);
         List<Integer> basicRange = config.get("app.basic-range").asList(Integer.class).get();
         Path loggingOutputPath = config.get("logging.outputs.file.name").as(Path.class).get();
 
-        System.out.println("'page-size' configured value = " + pageSize);
-        System.out.println("'storageEnabled' configured value = " + storageEnabled);
-        System.out.println("'basic-range' configured value = " + basicRange);
-        System.out.println("'logging.outputs.file.name' configured value = " + loggingOutputPath);
+        System.out.println("[APP] 'page-size' configured value = " + pageSize);
+        System.out.println("[APP] 'storageEnabled' configured value = " + storageEnabled);
+        System.out.println("[APP] 'basic-range' configured value = " + basicRange);
+        System.out.println("[APP] 'logging.outputs.file.name' configured value = " + loggingOutputPath);
+        System.out.println();
+        }
+
+    public static void displaySplashScreen() {
+        String title = " Helidon Config Example (Basic) ";
+        int length = title.length();
+
+        System.out.println();
+        System.out.print("[APP] ");
+        for (int i = 0; i < length; ++i)
+            System.out.print("-");
+        System.out.println();
+        System.out.println("[APP] " + title);
+        System.out.print("[APP] ");
+        for (int i = 0; i < length; ++i)
+            System.out.print("-");
+        System.out.println();
         }
     }
