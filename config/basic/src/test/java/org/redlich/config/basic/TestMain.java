@@ -16,5 +16,36 @@
 
 package org.redlich.config.basic;
 
+import io.helidon.config.Config;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+
+import java.nio.file.Path;
+import java.util.List;
+
+import static io.helidon.config.ConfigSources.classpath;
+
 public class TestMain {
+
+    @BeforeAll
+    public Config getConfig() {
+        final String configFile = "application.conf";
+        return Config.create(classpath(configFile));
+        }
+
+    @Test
+    public void testMain() {
+        Config config = getConfig();
+
+        int pageSize = config.get("app.page-size").asInt().get();
+        boolean storageEnabled = config.get("app.storageEnabled").asBoolean().orElse(false);
+        List<Integer> basicRange = config.get("app.basic-range").asList(Integer.class).get();
+        Path loggingOutputPath = config.get("logging.outputs.file.name").as(Path.class).get();
+
+        assert pageSize == 20;
+        assert !storageEnabled;
+        assert basicRange.get(0) == -20;
+        assert basicRange.get(1) == 20;
+        assert loggingOutputPath.toString().equals("target/root.log");
+        }
     }
