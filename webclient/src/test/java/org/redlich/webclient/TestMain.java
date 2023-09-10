@@ -16,19 +16,38 @@
 
 package org.redlich.webclient;
 
-import static org.junit.Assert.assertTrue;
+import io.helidon.common.http.Http;
+import io.helidon.media.jackson.JacksonSupport;
+import io.helidon.webclient.WebClient;
 
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
-/**
- * Unit test for simple App.
- */
 public class TestMain {
-    /**
-     * Rigorous Test :-)
-     */
+
+    // private static WebClient webClient;
+
+    @BeforeAll
+    public static WebClient startClient() {
+        System.out.println("[APP] Starting the client");
+
+        WebClient webClient = WebClient.builder()
+                .baseUri("https://restcountries.com")
+                .addHeader(Http.Header.ACCEPT_LANGUAGE, "en-us")
+                .addHeader(Http.Header.ACCEPT_ENCODING, "gzip, deflate, br")
+                .addReader(JacksonSupport.reader())
+                .addWriter(JacksonSupport.writer())
+                .build();
+
+        return webClient;
+
+    }
     @Test
-    public void shouldAnswerWithTrue() {
-        assertTrue( true );
+    public void testMain() {
+        /*
+         * TO DO: finish test
+         */
+        WebClient client = startClient();
+        assert(true);
         }
     }

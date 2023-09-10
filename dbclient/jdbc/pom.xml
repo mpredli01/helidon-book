@@ -10,7 +10,7 @@
     </parent>
 
     <groupId>org.redlich.dbclient.jdbc</groupId>
-    <artifactId>dbclient-jdbc</artifactId>
+    <artifactId>jdbc</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <name>Helidon DBClient Example (JDBC)</name>
@@ -22,17 +22,13 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <helidon.version>3.2.2</helidon.version>
+        <mysql.connector.version>8.0.33</mysql.connector.version>
         <exec.mojo.version>3.1.0</exec.mojo.version>
         <junit.version>5.10.0</junit.version>
         <mainClass>org.redlich.dbclient.jdbc.JdbcExampleMain</mainClass>
     </properties>
 
     <dependencies>
-        <!-- <dependency>
-            <groupId>io.helidon.health</groupId>
-            <artifactId>helidon-health</artifactId>
-            <version>${helidon.version}</version>
-        </dependency> -->
         <dependency>
             <groupId>io.helidon.metrics</groupId>
             <artifactId>helidon-metrics-service-api</artifactId>
@@ -78,10 +74,11 @@
             <artifactId>helidon-dbclient-jsonp</artifactId>
             <version>${helidon.version}</version>
         </dependency>
-        <!-- <dependency>
+        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-        </dependency> -->
+            <version>${mysql.connector.version}</version>
+        </dependency>
         <!-- <dependency>
             <groupId>io.helidon.integrations.db</groupId>
             <artifactId>h2</artifactId>
@@ -97,16 +94,6 @@
             <artifactId>slf4j-jdk14</artifactId>
             <version>2.0.7</version>
         </dependency>
-        <!--<dependency>
-            <groupId>io.helidon.media</groupId>
-            <artifactId>helidon-media-jsonb</artifactId>
-            <version>${helidon.version}</version>
-        </dependency> -->
-        <!-- <dependency>
-            <groupId>io.helidon.config</groupId>
-            <artifactId>helidon-config-yaml</artifactId>
-            <version>${helidon.version}</version>
-        </dependency> -->
         <dependency>
             <groupId>org.redlich.dbclient.common</groupId>
             <artifactId>dbclient-common</artifactId>

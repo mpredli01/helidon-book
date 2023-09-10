@@ -44,7 +44,7 @@ public class PokemonService extends AbstractPokemonService {
         }
 
     /**
-     * Delete all pokemons.
+     * Delete all Pokémons.
      *
      * @param request  the server request
      * @param response the server response

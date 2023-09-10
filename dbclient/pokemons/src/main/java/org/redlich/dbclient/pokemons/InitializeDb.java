@@ -38,12 +38,13 @@ public class InitializeDb {
         try {
             if (!PokemonMain.isMongo()) {
                 initSchema(dbClient);
-            }
+                }
             initData(dbClient);
-        } catch (Exception ex) {
+            }
+        catch (Exception ex) {
             System.out.printf("Could not initialize database: %s\n", ex.getMessage());
+            }
         }
-    }
 
     /**
      * Initializes database schema (tables).
@@ -56,15 +57,17 @@ public class InitializeDb {
                             .namedDml("create-types")
                             .flatMapSingle(result -> exec.namedDml("create-pokemons")))
                     .await();
-        } catch (Exception ex1) {
+            }
+        catch (Exception ex1) {
             System.out.printf("Could not create tables: %s", ex1.getMessage());
             try {
                 deleteData(dbClient);
-            } catch (Exception ex2) {
+                }
+            catch (Exception ex2) {
                 System.out.printf("Could not delete tables: %s", ex2.getMessage());
+                }
             }
         }
-    }
 
     /**
      * InitializeDb database content (rows in tables).

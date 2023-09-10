@@ -19,7 +19,7 @@ package org.redlich.dbclient.pokemons;
 import io.helidon.common.Reflected;
 
 /**
- * POJO representing Pokemon.
+ * POJO representing a Pokémon.
  */
 @Reflected
 public class Pokemon {
@@ -35,7 +35,7 @@ public class Pokemon {
         }
 
     /**
-     * Create pokemon with name and type.
+     * Create a Pokémon with name and type.
      *
      * @param id id of the beast
      * @param name name of the beast

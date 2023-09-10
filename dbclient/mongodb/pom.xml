@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>org.redlich.dbclient.mongodb</groupId>
-    <artifactId>dbclient-mongodb</artifactId>
+    <artifactId>mongodb</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <name>Helidon DBClient Example (MongoDB)</name>

@@ -1,0 +1,100 @@
+server:
+  port: 8079
+  host: 0.0.0.0
+  features:
+    print-details: true
+
+tracing:
+  service: mongo-db
+
+# docker run --rm --name mongo -p 27017:27017 mongo
+db:
+  source: "mongoDb"
+  connection:
+    url: "mongodb://127.0.0.1:27017/pokemon"
+  services:
+    tracing:
+      - enabled: true
+    metrics:
+      - type: METER
+  health-check:
+    type: "query"
+    statementName: "health-check"
+  statements:
+    # Health check statement; must be of type query.
+    health-check: '{
+            "operation": "command",
+            "query": { ping: 1 }
+        }'
+    ## Create database schema
+    # Select all types
+    select-all-types: '{
+            "collection": "types",
+            "operation": "query",
+            "projection": { id: 1, name: 1, _id: 0 },
+            "query": {}
+        }'
+    # Select all Pokémon without type information
+    select-all-pokemons: '{
+            "collection": "pokemons",
+            "operation": "query",
+            "projection": { id: 1, name: 1, id_type: 1, _id: 0 },
+            "query": {}
+        }'
+    # Select Pokémon by id
+    select-pokemon-by-id: '{
+            "collection": "pokemons",
+            "operation": "query",
+            "projection": { id: 1, name: 1, id_type: 1, _id: 0 },
+            "query": { id: $id }
+        }'
+    # Select Pokémon by name
+    select-pokemon-by-name: '{
+            "collection": "pokemons",
+            "operation": "query",
+            "projection": { id: 1, name: 1, id_type: 1, _id: 0 },
+            "query": { name: ? }
+        }'
+    # Insert records into database
+    insert-type: '{
+            "collection": "types",
+            "operation": "insert",
+            "value": {
+                "id": ?,
+                "name": ?
+            }
+        }'
+    insert-pokemon: '{
+            "collection": "pokemons",
+            "operation": "insert",
+            "value": {
+                "id": ?,
+                "name": ?,
+                "id_type": ?
+            }
+        }'
+    # Update name of Pokémon specified by id
+    update-pokemon-by-id: '{
+            "collection": "pokemons",
+            "operation": "update",
+            "value":{ $set: { "name": $name, "id_type": $idType } },
+            "query": { id: $id }
+        }'
+    # Delete Pokémon by id
+    delete-pokemon-by-id: '{
+            "collection": "pokemons",
+            "operation": "delete",
+            "query": { id: $id }
+        }'
+    # Delete all Pokémon types
+    delete-all-types: '{
+            "collection": "types",
+            "operation": "delete",
+            "query": { }
+        }'
+    # Delete all Pokémons
+    delete-all-pokemons: '{
+            "collection": "pokemons",
+            "operation": "delete",
+            "query": { }
+        }'

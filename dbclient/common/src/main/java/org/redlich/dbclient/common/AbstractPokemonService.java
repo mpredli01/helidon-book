@@ -42,7 +42,7 @@ public abstract class AbstractPokemonService implements Service {
     private final DbClient dbClient;
 
     /**
-     * Create a new pokemon service with a DB client.
+     * Create a new Pokémon service with a DB client.
      *
      * @param dbClient DB client to use for database operations
      */
@@ -88,7 +88,7 @@ public abstract class AbstractPokemonService implements Service {
     protected abstract void deleteAllPokemons(ServerRequest request, ServerResponse response);
 
     /**
-     * Insert new pokemon with specified name.
+     * Insert new Pokémon with specified name.
      *
      * @param request  the server request
      * @param response the server response
@@ -103,13 +103,13 @@ public abstract class AbstractPokemonService implements Service {
         }
 
     /**
-     * Insert new pokemon with specified name.
+     * Insert new Pokémon with specified name.
      *
      * @param request  the server request
      * @param response the server response
      */
     private void insertPokemonSimple(ServerRequest request, ServerResponse response) {
-        // Test Pokemon POJO mapper
+        // Test Pokémon POJO mapper
         Pokemon pokemon = new Pokemon(request.path().param("name"), request.path().param("type"));
 
         dbClient.execute(exec -> exec
@@ -121,7 +121,7 @@ public abstract class AbstractPokemonService implements Service {
         }
 
     /**
-     * Get a single pokemon by name.
+     * Get a single Pokémon by name.
      *
      * @param request  server request
      * @param response server response
@@ -138,7 +138,7 @@ public abstract class AbstractPokemonService implements Service {
         }
 
     /**
-     * Return JsonArray with all stored pokemons or pokemons with matching attributes.
+     * Return JsonArray with all stored Pokémon or Pokémon with matching attributes.
      *
      * @param request  the server request
      * @param response the server response
@@ -151,7 +151,7 @@ public abstract class AbstractPokemonService implements Service {
         }
 
     /**
-     * Update a pokemon.
+     * Update a Pokémon.
      * Uses a transaction.
      *
      * @param request  the server request
@@ -183,7 +183,7 @@ public abstract class AbstractPokemonService implements Service {
         }
 
     /**
-     * Delete pokemon with specified name (key).
+     * Delete Pokémon with specified name (key).
      *
      * @param request  the server request
      * @param response the server response

@@ -49,7 +49,7 @@ public final class MongoDbExampleMain {
      */
     public static void main(final String[] args) {
         startServer();
-    }
+        }
 
     /**
      * Start the server.
@@ -77,7 +77,7 @@ public final class MongoDbExampleMain {
             });
 
         // Server threads are not daemon. NO need to block. Just react.
-        server.whenShutdown().thenRun(() -> System.out.println("WEB server is DOWN. Good bye!"));
+        server.whenShutdown().thenRun(() -> System.out.println("WEB server is DOWN. Goodbye!"));
 
         return server;
         }
@@ -106,14 +106,14 @@ public final class MongoDbExampleMain {
                 .build();
 
         return Routing.builder()
-                .register(health)                   // Health at "/health"
-                .register(MetricsSupport.create())  // Metrics at "/metrics"
+                .register(health)                   // Health at /health endpoint
+                .register(MetricsSupport.create())  // Metrics at /metrics endpoint
                 .register("/db", new PokemonService(dbClient))
                 .build();
         }
 
     private static IllegalStateException noConfigError(String key) {
-        return new IllegalStateException("Attempting to create a Pokemon service with no configuration"
+        return new IllegalStateException("Attempting to create a Pokémon service with no configuration"
                 + ", config key: " + key);
         }
     }

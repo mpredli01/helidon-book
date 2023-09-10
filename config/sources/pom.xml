@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>org.redlich.config.sources</groupId>
-    <artifactId>config-sources</artifactId>
+    <artifactId>sources</artifactId>
 
     <name>Helidon Config Example (Sources)</name>
     <description>This example shows how to merge the configuration from different sources.</description>

@@ -57,11 +57,11 @@ public final class PokemonMain {
      */
     public static void main(final String[] args) {
         if (args != null && args.length > 0 && args[0] != null && "mongo".equals(args[0].toLowerCase())) {
-            System.out.println("MongoDB database selected");
+            System.out.println("[APP] MongoDB database selected");
             mongo = true;
             }
         else {
-            System.out.println("JDBC database selected");
+            System.out.println("[APP] JDBC database selected");
             mongo = false;
             }
         startServer();
