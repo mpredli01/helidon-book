@@ -5,7 +5,19 @@
 
 ### Prerequisite
 
-Please ensure to have your local instance of MongoDB running on your workstation
+MongoDB is required to build and execute this example application.
+
+If you have your own local installation of MongoDB, please start it now.
+
+```bash
+mongod --dbpath ~/data/db
+```
+
+Otherwise, you can use Docker to start MongoDB:
+
+```bash
+docker run --rm --name mongo -p 27017:27017 mongo
+```
 
 ### Build the Application
 
