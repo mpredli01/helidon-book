@@ -1,6 +1,7 @@
-# Helidon Revealed
-## A Practical Guide to Getting Started with Oracle's Microservices Framework
-## Helidon DBClient Example (MongoDB)
+## Helidon Revealed
+#### A Practical Guide to Getting Started with Oracle's Microservices Framework
+
+### Helidon DBClient Example (MongoDB)
 
 ### Prerequisite
 
@@ -8,41 +9,56 @@ Please ensure to have your local instance of MongoDB running on your workstation
 
 ### Build the Application
 
-`$ mvn clean compile exec:java`
+```bash
+$ mvn clean compile exec:java
+```
 
 ### Exercise the Application
 
-* `localhost:8079/db`
-* `localhost:8079/metrics`
-* `localhost:8079/health`
+```bash
+localhost:8079/db
+localhost:8079/metrics
+localhost:8079/health
+```
 
 ### cURL Commands:
 
-#### List all Pokémons in the database
+#### List all Pokémon in the database
 
-* `curl http://localhost:8079/db`
+```bash
+$ curl http://localhost:8079/db
+```
 
-#### Add new Pokémons to the database
+#### Add new Pokémon to the database
 
-* `$ curl -i -X PUT -d '{"name":"Squirtle","type":"Water"}' http://localhost:8079/db`
-* `$ curl -i -X PUT -d '{"name":"Caterpie","type":"Bug"}' http://localhost:8079/db`
-* `$ curl -i -X PUT -d '{"name":"Rattata","type":"Dark"}' http://localhost:8079/db`
+```bash
+$ curl -i -X PUT -d '{"name":"Squirtle","type":"Water"}' http://localhost:8079/db
+$ curl -i -X PUT -d '{"name":"Caterpie","type":"Bug"}' http://localhost:8079/db
+$ curl -i -X PUT -d '{"name":"Rattata","type":"Dark"}' http://localhost:8079/db
+```
 
 #### Retrieve a single Pokémon from the database
 
-* `$ curl http://localhost:8079/db/Squirtle`
+```bash
+$ curl http://localhost:8079/db/Squirtle
+```
 
 #### Delete a single Pokémon from the database
+   
+```bash
+$ curl -i -X DELETE http://localhost:8079/db/Squirtle
+```
 
-* `$ curl -i -X DELETE http://localhost:8079/db/Squirtle`
 
-#### Delete all Pokémons from the database
+#### Delete all Pokémon from the database
 
-* `$ curl -i -X DELETE http://localhost:8079/db`
+```bash
+$ curl -i -X DELETE http://localhost:8079/db
+```
 
-### Pokemon Types
+### Pokémon Types
 
-These are the 18 types of Pokémons according to this [website](https://pokemondb.net/type).
+These are the 18 types of Pokémon according to this [website](https://pokemondb.net/type).
 
 * NORMAL
 * FIRE 
@@ -63,6 +79,6 @@ These are the 18 types of Pokémons according to this [website](https://pokemond
 * STEEL
 * FAIRY
 
-### List of Pokémons
+### List of Pokémon
 
-You can find a list of Pokémons at this [website](https://pokemondb.net/pokedex/all).
+You can find a list of Pokémon at this [website](https://pokemondb.net/pokedex/all).

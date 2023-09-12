@@ -1,6 +1,7 @@
-# Helidon Revealed
-## A Practical Guide to Getting Started with Oracle's Microservices Framework
-## Helidon Config Example (Sources)
+## Helidon Revealed
+#### A Practical Guide to Getting Started with Oracle's Microservices Framework
+
+### Helidon Config Example (Sources)
 
 This example demonstrates how to load configuration from multiple configuration sources.
 
@@ -17,9 +18,9 @@ This example demonstrates how to load configuration from multiple configuration 
    filter.
 
 
-## Build and Run
+### Build and Run
 
-Please refer to the specific README.md files for
+Please refer to the specific `README.md` files for
 ```bash
 mainClass=org.redlich.config.sources.Main
 $ mvn clean compile exec:java 

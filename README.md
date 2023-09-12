@@ -1,5 +1,11 @@
-# Helidon Revealed
-## A Practical Guide to Getting Started with Oracle's Microservices Framework
+## Helidon Revealed
+#### A Practical Guide to Getting Started with Oracle's Microservices Framework
+
+#### Published by Apress
+
+![Helidon Logo](./images/heldion-logo.png)
+
+This repository contains small applications that support the content in this book. Starting with Chapter 5, a sub-project exists for each chapter
 
 ### Chapters
 
@@ -26,12 +32,16 @@
 * Chapter 14: Introduction to GraalVM
 * Chapter 15: Converting a Helidon Application to a Native Image
 
-This repository contains small applications that support the content in this book. Starting with Chapter 5, a sub-project exists for each chapter
-
 ### Getting Started
 
 Clone this repository
 
-`git clone https://github.com/mpredli01/helidon-book.git`
+```bash
+$ git clone https://github.com/mpredli01/helidon-book.git
 
+$ cd helidon-book
 
+$ cd { exampleDir } (webserver, dbclient, etc.) 
+
+$ mvn clean compile exec:java
+```
