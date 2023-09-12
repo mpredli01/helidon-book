@@ -43,5 +43,10 @@ $ cd helidon-book
 
 $ cd { exampleDir } (webserver, dbclient, etc.) 
 
+```
+
+Follow the instructions described in the corresponding `README.md` file.
+                                                                        
+```bash
 $ mvn clean compile exec:java
 ```
