@@ -1,0 +1,41 @@
+security:
+  config:
+    # Configuration of secured config (encryption of passwords in property files)
+    # Set to true for production - if set to true, clear text passwords will cause failure
+    require-encryption: false
+  providers:
+    - http-basic-auth:
+        realm: "helidon"
+        users:
+          - login: "jack"
+            password: "${CLEAR=password}"
+            roles: [ "user", "admin" ]
+          - login: "jill"
+            password: "${CLEAR=password}"
+            roles: [ "user" ]
+          - login: "john"
+            password: "${CLEAR=password}"
+            roles: [ ]
+  web-server:
+    # Configuration of integration with web server
+    defaults:
+      authenticate: true
+    paths:
+      - path: "/noRoles"
+        methods: [ "get" ]
+      - path: "/user[/{*}]"
+        methods: [ "get" ]
+        roles-allowed: [ "user" ]
+      - path: "/admin"
+        methods: [ "get" ]
+        roles-allowed: [ "admin" ]
+      - path: "/deny"
+        methods: [ "get" ]
+        roles-allowed: [ "deny" ]
+        audit: true
+      - path: "/noAuthn"
+        roles-allowed: [ "admin" ]
+        authentication-optional: true
+        audit: true
+      - path: "/static[/{*}]"
+        roles-allowed: "user"
