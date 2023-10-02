@@ -21,6 +21,11 @@ import java.util.function.Supplier;
 
 import io.helidon.webserver.WebServer;
 
+import io.helidon.config.Config;
+import io.helidon.config.ConfigValue;
+
+import java.util.List;
+
 final class BasicExampleUtil {
     private BasicExampleUtil() {
         }
@@ -28,12 +33,14 @@ final class BasicExampleUtil {
     static void startAndPrintEndpoints(Supplier<WebServer> startMethod) {
         long t = System.nanoTime();
 
+        Config config = Config.create();
         WebServer webServer = startMethod.get();
 
         long time = System.nanoTime() - t;
         System.out.printf("[APP] Server started in %d ms ms%n", TimeUnit.MILLISECONDS.convert(time, TimeUnit.NANOSECONDS));
         System.out.printf("[APP] Started server on localhost:%d%n", webServer.port());
         System.out.println();
+
         System.out.println("[APP] ------------------");
         System.out.println("[APP]  Configured Users");
         System.out.println("[APP] ------------------");
@@ -41,6 +48,7 @@ final class BasicExampleUtil {
         System.out.println("[APP] * Jill/password in roles: user");
         System.out.println("[APP] * John/password in no roles");
         System.out.println();
+
         System.out.println("[APP] -----------");
         System.out.println("[APP]  Endpoints");
         System.out.println("[APP] -----------");
@@ -61,5 +69,30 @@ final class BasicExampleUtil {
         System.out.println("[APP] * Static content, requires user role:");
         System.out.printf("[APP]    - http://localhost:%1$d/static/index.html%n", webServer.port());
         System.out.println();
+
+        System.out.println("[APP] -------------------------------------------");
+        System.out.println("[APP]  Configured Users Using Configuration File");
+        System.out.println("[APP] -------------------------------------------");
+
+        ConfigValue<String> jack = config.get("security.providers.0.http-basic-auth.users.0.login").asString();
+        ConfigValue<String> jackPassword = config.get("security.providers.0.http-basic-auth.users.0.password").asString();
+        ConfigValue<List<Config>> jackRoles = config.get("security.providers.0.http-basic-auth.users.0.roles").asNodeList();
+        System.out.println("[APP TEST] " + jack);
+        System.out.println("[APP TEST] " + jackPassword);
+        System.out.println("[APP TEST] " + jackRoles);
+
+        ConfigValue<String> jill = config.get("security.providers.1.http-basic-auth.users.1.login").asString();
+        ConfigValue<String> jillPassword = config.get("security.providers.1.http-basic-auth.users.1.password").asString();
+        ConfigValue<List<Config>> jillRoles = config.get("security.providers.1.http-basic-auth.users.1.roles").asNodeList();
+        System.out.println("[APP TEST] " + jill);
+        System.out.println("[APP TEST] " + jillPassword);
+        System.out.println("[APP TEST] " + jillRoles);
+
+        ConfigValue<String> john = config.get("security.providers.2.http-basic-auth.users.2.login").asString();
+        ConfigValue<String> johnPassword = config.get("security.providers.2.http-basic-auth.users.2.password").asString();
+        ConfigValue<List<Config>> johnRoles = config.get("security.providers.2.http-basic-auth.users.2.roles").asNodeList();
+        System.out.println("[APP TEST] " + john);
+        System.out.println("[APP TEST] " + johnPassword);
+        System.out.println("[APP TEST] " + johnRoles);
         }
     }
