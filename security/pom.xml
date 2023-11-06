@@ -27,7 +27,7 @@
     <junit.version>5.10.0</junit.version>
     <hamcrest.version>2.2</hamcrest.version>
     <lombok.version>1.18.26</lombok.version>
-    <mainClass>org.redlich.security.BasicExampleBuilderMain</mainClass>
+    <mainClass>org.redlich.security.BasicExampleConfigMain</mainClass>
   </properties>
 
   <dependencies>

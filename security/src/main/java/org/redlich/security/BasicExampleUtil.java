@@ -81,16 +81,16 @@ final class BasicExampleUtil {
         System.out.println("[APP TEST] " + jackPassword);
         System.out.println("[APP TEST] " + jackRoles);
 
-        ConfigValue<String> jill = config.get("security.providers.1.http-basic-auth.users.1.login").asString();
-        ConfigValue<String> jillPassword = config.get("security.providers.1.http-basic-auth.users.1.password").asString();
-        ConfigValue<List<Config>> jillRoles = config.get("security.providers.1.http-basic-auth.users.1.roles").asNodeList();
+        ConfigValue<String> jill = config.get("security.providers.0.http-basic-auth.users.1.login").asString();
+        ConfigValue<String> jillPassword = config.get("security.providers.0.http-basic-auth.users.1.password").asString();
+        ConfigValue<List<Config>> jillRoles = config.get("security.providers.0.http-basic-auth.users.1.roles").asNodeList();
         System.out.println("[APP TEST] " + jill);
         System.out.println("[APP TEST] " + jillPassword);
         System.out.println("[APP TEST] " + jillRoles);
 
-        ConfigValue<String> john = config.get("security.providers.2.http-basic-auth.users.2.login").asString();
-        ConfigValue<String> johnPassword = config.get("security.providers.2.http-basic-auth.users.2.password").asString();
-        ConfigValue<List<Config>> johnRoles = config.get("security.providers.2.http-basic-auth.users.2.roles").asNodeList();
+        ConfigValue<String> john = config.get("security.providers.0.http-basic-auth.users.2.login").asString();
+        ConfigValue<String> johnPassword = config.get("security.providers.0.http-basic-auth.users.2.password").asString();
+        ConfigValue<List<Config>> johnRoles = config.get("security.providers.0.http-basic-auth.users.2.roles").asNodeList();
         System.out.println("[APP TEST] " + john);
         System.out.println("[APP TEST] " + johnPassword);
         System.out.println("[APP TEST] " + johnRoles);

@@ -45,10 +45,10 @@ public final class BasicExampleBuilderMain {
         USERS.put("jack", new MyUser("jack", "password".toCharArray(), Set.of("user", "admin")));
         USERS.put("jill", new MyUser("jill", "password".toCharArray(), Set.of("user")));
         USERS.put("john", new MyUser("john", "password".toCharArray(), Set.of()));
-    }
+        }
 
     private BasicExampleBuilderMain() {
-    }
+        }
 
     /**
      * Entry point, starts the server.
@@ -101,15 +101,14 @@ public final class BasicExampleBuilderMain {
                 .addAuthenticationProvider(
                         HttpBasicAuthProvider.builder()
                                 .realm("helidon")
-                                .userStore(buildUserStore()),
-                        "http-basic-auth")
+                                .userStore(buildUserStore()), "http-basic-auth")
                 .build();
         return WebSecurity.create(security);
         }
 
     private static SecureUserStore buildUserStore() {
         return login -> Optional.ofNullable(USERS.get(login));
-    }
+        }
 
     private static class MyUser implements SecureUserStore.User {
         private final String login;
