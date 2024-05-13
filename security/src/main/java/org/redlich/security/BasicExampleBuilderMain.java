@@ -140,6 +140,7 @@ public final class BasicExampleBuilderMain {
             return login;
             }
         }
+
     public static void displaySplashScreen() {
         String title = " Helidon Security Example ";
         int length = title.length();

@@ -126,6 +126,8 @@
   <modules>
     <module>config</module>
     <module>dbclient</module>
+    <module>metrics</module>
+    <module>security</module>
     <module>webclient</module>
     <module>webserver</module>
   </modules>
