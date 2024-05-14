@@ -26,18 +26,31 @@ import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
-import org.eclipse.microprofile.metrics.annotation.Counted;
-import org.eclipse.microprofile.metrics.annotation.Timed;
+
+import org.eclipse.microprofile.openapi.annotations.enums.SchemaType;
+import org.eclipse.microprofile.openapi.annotations.media.Content;
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
+import org.eclipse.microprofile.openapi.annotations.parameters.RequestBody;
+import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
+import org.eclipse.microprofile.openapi.annotations.responses.APIResponses;
 
 /**
- * A simple JAX-RS resource to greet you with filtered metrics support.
+ * A simple JAX-RS resource to greet you. Examples:
+ *
+ * Get default greeting message:
+ * curl -X GET http://localhost:8080/greet
+ *
+ * Get greeting message for Joe:
+ * curl -X GET http://localhost:8080/greet/Joe
+ *
+ * Change greeting
+ * curl -X PUT -H "Content-Type: application/json" -d '{"greeting" : "Howdy"}' http://localhost:8080/greet/greeting
+ *
+ * The message is returned as a JSON object.
  */
 @Path("/greet")
 @RequestScoped
 public class GreetResource {
-
-    static final String TIMER_FOR_GETS = "timerForGets";
-    static final String COUNTER_FOR_PERSONALIZED_GREETINGS = "counterForPersonalizedGreetings";
 
     /**
      * The greeting message provider.
@@ -58,12 +71,11 @@ public class GreetResource {
     /**
      * Return a worldly greeting message.
      *
-     * @return {@link jakarta.json.JsonObject}
+     * @return {@link Message}
      */
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    // @Timed(name = TIMER_FOR_GETS, absolute = true)
-    public GreetingMessage getDefaultMessage() {
+    public Message getDefaultMessage() {
         return createResponse("World");
         }
 
@@ -71,40 +83,48 @@ public class GreetResource {
      * Return a greeting message using the name that was provided.
      *
      * @param name the name to greet
-     * @return {@link jakarta.json.JsonObject}
+     * @return {@link Message}
      */
     @Path("/{name}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    // @Timed(name = TIMER_FOR_GETS, absolute = true)
-    public GreetingMessage getMessage(@PathParam("name") String name) {
+    public Message getMessage(@PathParam("name") String name) {
         return createResponse(name);
         }
 
     /**
      * Set the greeting to use in future messages.
      *
-     * @param message JSON containing the new greeting
+     * @param message Message containing the new greeting
      * @return {@link Response}
      */
     @Path("/greeting")
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    // @Counted(name = COUNTER_FOR_PERSONALIZED_GREETINGS, absolute = true)
-    public Response updateGreeting(GreetingMessage message) {
-        if (message.getMessage() == null) {
-            GreetingMessage entity = new GreetingMessage("No greeting provided");
-            return Response.status(Response.Status.BAD_REQUEST).entity(entity).build();
+    @RequestBody(name = "greeting",
+            required = true,
+            content = @Content(mediaType = "application/json",
+                    schema = @Schema(type = SchemaType.OBJECT, requiredProperties = { "greeting" })))
+    @APIResponses({
+            @APIResponse(name = "normal", responseCode = "204", description = "Greeting updated"),
+            @APIResponse(name = "missing 'greeting'", responseCode = "400",
+                    description = "JSON did not contain setting for 'greeting'")})
+    public Response updateGreeting(Message message) {
+
+        if (message.getGreeting() == null || message.getGreeting().isEmpty()) {
+            Message error = new Message();
+            error.setMessage("No greeting provided");
+            return Response.status(Response.Status.BAD_REQUEST).entity(error).build();
             }
 
-        greetingProvider.setMessage(message.getMessage());
+        greetingProvider.setMessage(message.getGreeting());
         return Response.status(Response.Status.NO_CONTENT).build();
         }
 
-    private GreetingMessage createResponse(String who) {
+    private Message createResponse(String who) {
         String msg = String.format("%s %s!", greetingProvider.getMessage(), who);
 
-        return new GreetingMessage(msg);
+        return new Message(msg);
         }
     }

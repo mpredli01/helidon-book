@@ -10,7 +10,7 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <groupId>org.redlich.webclient</groupId>
+  <groupId>org.redlich.security</groupId>
   <artifactId>security</artifactId>
   <version>1.0-SNAPSHOT</version>
 

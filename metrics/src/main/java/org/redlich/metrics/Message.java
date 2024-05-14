@@ -13,45 +13,35 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package org.redlich.metrics;
 
-/**
- * POJO defining the greeting message content.
- */
-@SuppressWarnings("unused")
-public class GreetingMessage {
+public class Message {
+
     private String message;
 
-    /**
-     * Create a new GreetingMessage instance.
-     */
-    public GreetingMessage() {
+    private String greeting;
+
+    public Message() {
         }
 
-    /**
-     * Create a new GreetingMessage instance.
-     *
-     * @param message message
-     */
-    public GreetingMessage(String message) {
+    public Message(String message) {
         this.message = message;
         }
 
-    /**
-     * Gets the message value.
-     *
-     * @return message value
-     */
-    public String getMessage() {
-        return message;
-        }
-
-    /**
-     * Sets the message value.
-     *
-     * @param message message value to set
-     */
     public void setMessage(String message) {
         this.message = message;
+        }
+
+    public String getMessage() {
+        return this.message;
+        }
+
+    public void setGreeting(String greeting) {
+        this.greeting = greeting;
+        }
+
+    public String getGreeting() {
+        return this.greeting;
         }
     }
