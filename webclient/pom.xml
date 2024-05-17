@@ -15,25 +15,41 @@
   <version>1.0-SNAPSHOT</version>
 
   <name>Helidon WebClient Example</name>
-  <description>Example corresponding to Chapter 6 of Helidon Revealed</description>
+  <description>Example application corresponding to Chapter 6 of Helidon Revealed</description>
   <url>https://redlich.net</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>17</maven.compiler.source>
-    <maven.compiler.target>17</maven.compiler.target>
-    <helidon.version>3.2.2</helidon.version>
-    <exec.mojo.version>3.1.0</exec.mojo.version>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
+    <helidon.version>3.2.8</helidon.version>
+    <helidon.media.version>3.2.8</helidon.media.version>
+    <exec.mojo.version>3.2.0</exec.mojo.version>
     <junit.version>5.10.0</junit.version>
-    <lombok.version>1.18.26</lombok.version>
+    <lombok.version>1.18.30</lombok.version>
     <mainClass>org.redlich.webclient.Main</mainClass>
   </properties>
 
   <dependencies>
     <dependency>
+      <groupId>io.helidon.webclient</groupId>
+      <artifactId>helidon-webclient</artifactId>
+      <version>${helidon.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.helidon.media</groupId>
+      <artifactId>helidon-media-jsonp</artifactId>
+      <version>${helidon.media.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.helidon.media</groupId>
+      <artifactId>helidon-media-jsonb</artifactId>
+      <version>${helidon.media.version}</version>
+    </dependency>
+    <dependency>
       <groupId>io.helidon.media</groupId>
       <artifactId>helidon-media-jackson</artifactId>
-      <version>${helidon.version}</version>
+      <version>${helidon.media.version}</version>
     </dependency>
     <dependency>
       <groupId>org.projectlombok</groupId>

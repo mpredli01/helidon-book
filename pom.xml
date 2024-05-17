@@ -4,20 +4,28 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
+  <parent>
+    <groupId>io.helidon.applications</groupId>
+    <artifactId>helidon-mp</artifactId>
+    <version>4.0.8</version>
+    <relativePath/>
+  </parent>
+
   <groupId>org.redlich</groupId>
   <artifactId>helidon-book</artifactId>
   <version>1.0-SNAPSHOT</version>
         
   <name>Helidon Book Examples</name>
   <url>https://redlich.net</url>
-        
+
   <packaging>pom</packaging>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>17</maven.compiler.source>
-    <maven.compiler.target>17</maven.compiler.target>
-    <helidon.version>3.2.3</helidon.version>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
+    <helidon.version>4.0.8</helidon.version>
+    <helidon.media.version>3.2.8</helidon.media.version>
     <junit.version>5.10.0</junit.version>
   </properties>
 
@@ -27,11 +35,16 @@
       <artifactId>helidon-webserver</artifactId>
       <version>${helidon.version}</version>
     </dependency>
-    <dependency>
+    <!-- <dependency>
       <groupId>io.helidon.webclient</groupId>
       <artifactId>helidon-webclient</artifactId>
       <version>${helidon.version}</version>
     </dependency>
+    <dependency>
+      <groupId>io.helidon.webclient</groupId>
+      <artifactId>helidon-webclient-api</artifactId>
+      <version>${helidon.version}</version>
+    </dependency> -->
     <dependency>
       <groupId>io.helidon.config</groupId>
       <artifactId>helidon-config-yaml</artifactId>
@@ -45,12 +58,12 @@
     <dependency>
       <groupId>io.helidon.media</groupId>
       <artifactId>helidon-media-jsonp</artifactId>
-      <version>${helidon.version}</version>
+      <version>${helidon.media.version}</version>
     </dependency>
     <dependency>
       <groupId>io.helidon.media</groupId>
       <artifactId>helidon-media-jsonb</artifactId>
-      <version>${helidon.version}</version>
+      <version>${helidon.media.version}</version>
     </dependency>
     <dependency>
       <groupId>io.helidon.health</groupId>
