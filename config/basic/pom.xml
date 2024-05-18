@@ -21,7 +21,7 @@
         <mainClass>org.redlich.config.basic.Main</mainClass>
     </properties>
 
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
     
     <dependencies>
         <dependency>

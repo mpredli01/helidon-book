@@ -22,7 +22,7 @@
         <mainClass>org.redlich.config.sources.Main</mainClass>
     </properties>
 
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
     
     <dependencies>
         <dependency>

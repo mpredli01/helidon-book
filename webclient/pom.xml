@@ -22,6 +22,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>21</maven.compiler.source>
     <maven.compiler.target>21</maven.compiler.target>
+    <!-- using latest version of Helidon 3.0 release train due to breaking changes in Helidon 4.0 -->
     <helidon.version>3.2.8</helidon.version>
     <helidon.media.version>3.2.8</helidon.media.version>
     <exec.mojo.version>3.2.0</exec.mojo.version>
@@ -35,16 +36,6 @@
       <groupId>io.helidon.webclient</groupId>
       <artifactId>helidon-webclient</artifactId>
       <version>${helidon.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>io.helidon.media</groupId>
-      <artifactId>helidon-media-jsonp</artifactId>
-      <version>${helidon.media.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>io.helidon.media</groupId>
-      <artifactId>helidon-media-jsonb</artifactId>
-      <version>${helidon.media.version}</version>
     </dependency>
     <dependency>
       <groupId>io.helidon.media</groupId>

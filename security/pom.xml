@@ -20,10 +20,10 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>17</maven.compiler.source>
-    <maven.compiler.target>17</maven.compiler.target>
-    <helidon.version>3.2.2</helidon.version>
-    <exec.mojo.version>3.1.0</exec.mojo.version>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
+    <helidon.version>3.2.8</helidon.version>
+    <exec.mojo.version>3.2.0</exec.mojo.version>
     <junit.version>5.10.0</junit.version>
     <hamcrest.version>2.2</hamcrest.version>
     <lombok.version>1.18.26</lombok.version>
@@ -84,12 +84,6 @@
       <version>${helidon.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-api</artifactId>
-      <version>${junit.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
       <groupId>org.hamcrest</groupId>
       <artifactId>hamcrest-core</artifactId>
       <version>${hamcrest.version}</version>
@@ -98,7 +92,7 @@
     <dependency>
       <groupId>io.helidon.media</groupId>
       <artifactId>helidon-media-jackson</artifactId>
-      <version>${helidon.version}</version>
+      <version>${helidon.media.version}</version>
     </dependency>
     <dependency>
       <groupId>org.projectlombok</groupId>
