@@ -21,7 +21,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-        <helidon.version>3.2.2</helidon.version>
+        <helidon.version>3.2.4</helidon.version>
         <mysql.connector.version>8.0.33</mysql.connector.version>
         <exec.mojo.version>3.1.0</exec.mojo.version>
         <junit.version>5.10.0</junit.version>
