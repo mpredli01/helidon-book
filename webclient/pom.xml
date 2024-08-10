@@ -14,7 +14,7 @@
     <artifactId>webclient</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>Helidon WebClient Example Application</name>
+    <name>Helidon SE WebClient</name>
     <description>Example application corresponding to Chapter 6 of "Helidon Revealed: A Practical Guide to Getting Started with Oracle's Microservices Framework"</description>
     <url>https://redlich.net</url>
 

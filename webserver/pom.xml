@@ -14,7 +14,7 @@
     <artifactId>webserver</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>Helidon WebServer Example Application</name>
+    <name>Helidon SE WebServer</name>
     <description>Example application corresponding to Chapter 5 of "Helidon Revealed: A Practical Guide to Getting Started with Oracle's Microservices Framework"</description>
     <url>https://redlich.net</url>
 

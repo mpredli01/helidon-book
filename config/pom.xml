@@ -12,7 +12,7 @@
     <artifactId>config</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>Helidon Config Example Applications</name>
+    <name>Helidon SE Config</name>
     <description>Example applications corresponding to Chapter 7 of "Helidon Revealed: A Practical Guide to Getting Started with Oracle's Microservices Framework"</description>
     <url>https://redlich.net</url>
 

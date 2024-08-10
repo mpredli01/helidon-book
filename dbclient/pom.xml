@@ -14,23 +14,25 @@
     <artifactId>dbclient</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>Helidon DBClient Examples</name>
+    <name>Helidon SE DBClient</name>
     <description>Example applications corresponding to Chapter 8 of "Helidon Revealed: A Practical Guide to Getting Started with Oracle's Microservices Framework"</description>
     <url>https://redlich.net</url>
 
     <properties>
-        <helidon.version>3.2.8</helidon.version>
+        <helidon.dbclient.version>4.0.0-M1</helidon.dbclient.version>
+        <helidon.tracing.zipkin.version>4.0.0-M1</helidon.tracing.zipkin.version>
+        <helidon.metrics.service.version>4.0.0-M1</helidon.metrics.service.version>
         <mysql.connector.version>8.4.0</mysql.connector.version>
     </properties>
 
     <packaging>pom</packaging>
 
     <dependencies>
-        <dependency>
-            <groupId>org.redlich.dbclient.common</groupId>
-            <artifactId>dbclient-common</artifactId>
+        <!-- <dependency>
+            <groupId>org.redlich.dbclient</groupId>
+            <artifactId>dbclient</artifactId>
             <version>${project.version}</version>
-        </dependency>
+        </dependency> -->
         <dependency>
             <groupId>io.helidon.common</groupId>
             <artifactId>helidon-common</artifactId>
@@ -69,7 +71,7 @@
         <dependency>
             <groupId>io.helidon.dbclient</groupId>
             <artifactId>helidon-dbclient-metrics-jdbc</artifactId>
-            <version>${helidon.version}</version>
+            <version>${helidon.dbclient.version}</version>
         </dependency>
         <dependency>
             <groupId>io.helidon.dbclient</groupId>
@@ -90,7 +92,7 @@
         <dependency>
             <groupId>io.helidon.metrics</groupId>
             <artifactId>helidon-metrics-service-api</artifactId>
-            <version>${helidon.version}</version>
+            <version>${helidon.metrics.service.version}</version>
         </dependency>
         <dependency>
             <groupId>io.helidon.tracing</groupId>
@@ -100,7 +102,7 @@
         <dependency>
             <groupId>io.helidon.tracing</groupId>
             <artifactId>helidon-tracing-zipkin</artifactId>
-            <version>${helidon.version}</version>
+            <version>${helidon.tracing.zipkin.version}</version>
         </dependency>
         <dependency>
             <groupId>com.mysql</groupId>
