@@ -162,6 +162,7 @@
         <module>config</module>
         <module>dbclient</module>
         <module>faulttolerance</module>
+        <module>health</module>
         <module>metrics</module>
         <module>security</module>
         <module>webclient</module>
