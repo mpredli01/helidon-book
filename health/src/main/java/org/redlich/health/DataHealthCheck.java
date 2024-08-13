@@ -12,7 +12,7 @@ public class DataHealthCheck implements HealthCheck {
 
     @Override
     public HealthCheckResponse call() {
-        return HealthCheckResponse.named("Health check with data")
+        return HealthCheckResponse.named("Health Check with Data")
                 .up()
                 .withData("admin", "Mike")
                 .withData("user", "Barry")
