@@ -15,7 +15,12 @@
     <packaging>pom</packaging>
 
   <properties>
-      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    
+    <helidon.version>3.2.4</helidon.version>
+    <junit.version>5.10.0</junit.version>
+
       <helidon.version>4.0.0</helidon.version>
       <junit.version>5.10.0</junit.version>
       <helidon.version>3.2.4</helidon.version>
@@ -36,6 +41,7 @@
       <helidon.media.version>3.2.8</helidon.media.version>
       <junit.version>5.10.0</junit.version>
     </properties>
+
 
     <dependencies>
         <dependency>
