@@ -14,23 +14,25 @@
 
     <packaging>pom</packaging>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
-        <maven.clean.plugin.version>3.3.2</maven.clean.plugin.version>
-        <maven.resources.plugin.version>3.3.1</maven.resources.plugin.version>
-        <maven.compiler.plugin.version>3.13.0</maven.compiler.plugin.version>
-        <maven.surefire.plugin.version>3.2.5</maven.surefire.plugin.version>
-        <maven.jar.plugin.version>3.4.1</maven.jar.plugin.version>
-        <maven.install.plugin.version>3.1.2</maven.install.plugin.version>
-        <maven.deploy.plugin.version>3.1.2</maven.deploy.plugin.version>
-        <maven.site.plugin.version>3.12.1</maven.site.plugin.version>
-        <maven.dependency.plugin.version>3.6.1</maven.dependency.plugin.version>
-        <maven.project.info.reports.version>3.5.0</maven.project.info.reports.version>
-        <helidon.version>4.0.10</helidon.version>
-        <helidon.media.version>3.2.8</helidon.media.version>
-        <junit.version>5.10.0</junit.version>
+  <properties>
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <helidon.version>3.2.4</helidon.version>
+      <junit.version>5.10.0</junit.version>
+      <maven.compiler.source>21</maven.compiler.source>
+      <maven.compiler.target>21</maven.compiler.target>
+      <maven.clean.plugin.version>3.3.2</maven.clean.plugin.version>
+      <maven.resources.plugin.version>3.3.1</maven.resources.plugin.version>
+      <maven.compiler.plugin.version>3.13.0</maven.compiler.plugin.version>
+      <maven.surefire.plugin.version>3.2.5</maven.surefire.plugin.version>
+      <maven.jar.plugin.version>3.4.1</maven.jar.plugin.version>
+      <maven.install.plugin.version>3.1.2</maven.install.plugin.version>
+      <maven.deploy.plugin.version>3.1.2</maven.deploy.plugin.version>
+      <maven.site.plugin.version>3.12.1</maven.site.plugin.version>
+      <maven.dependency.plugin.version>3.6.1</maven.dependency.plugin.version>
+      <maven.project.info.reports.version>3.5.0</maven.project.info.reports.version>
+      <helidon.version>4.0.10</helidon.version>
+      <helidon.media.version>3.2.8</helidon.media.version>
+      <junit.version>5.10.0</junit.version>
     </properties>
 
     <dependencies>
