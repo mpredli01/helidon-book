@@ -10,41 +10,14 @@
     </parent>
 
     <groupId>org.redlich.dbclient.common</groupId>
-    <artifactId>dbclient-common</artifactId>
+    <artifactId>common</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>Helidon DBClient Example (Common)</name>
+    <name>* Helidon DBClient Example Application (Common)</name>
     <description>Utility classes for JDBC, MongoDB and Pokémon DBClient examples</description>
     <url>https://redlich.net</url>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
-        <helidon.version>3.2.2</helidon.version>
-        <junit.version>5.10.0</junit.version>
+        <helidon.version>3.2.8</helidon.version>
     </properties>
-
-    <dependencies>
-        <!-- <dependency>
-            <groupId>cn.minsin.version</groupId>
-            <artifactId>mutils-version-pom</artifactId>
-            <version>1.0.RELEASE</version>
-        </dependency> -->
-        <dependency>
-            <groupId>io.helidon.dbclient</groupId>
-            <artifactId>helidon-dbclient</artifactId>
-            <version>${helidon.version}</version>
-        </dependency>
-        <!-- <dependency>
-            <groupId>io.helidon.webserver</groupId>
-            <artifactId>helidon-webserver</artifactId>
-            <version>${helidon.version}</version>
-        </dependency> -->
-        <!-- <dependency>
-            <groupId>io.helidon.media</groupId>
-            <artifactId>helidon-media-jsonp</artifactId>
-            <version>${helidon.version}</version>
-        </dependency> -->
-    </dependencies>
 </project>
