@@ -13,115 +13,21 @@
     <artifactId>jdbc</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>Helidon DBClient Example (JDBC)</name>
+    <name>* Helidon DBClient Example Application (JDBC)</name>
     <description>Example using JDBC</description>
     <url>https://redlich.net</url>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
-        <helidon.version>3.2.2</helidon.version>
-        <mysql.connector.version>8.0.33</mysql.connector.version>
-        <exec.mojo.version>3.1.0</exec.mojo.version>
-        <junit.version>5.10.0</junit.version>
+        <exec.maven.plugin.version>3.2.0</exec.maven.plugin.version>
         <mainClass>org.redlich.dbclient.jdbc.JdbcExampleMain</mainClass>
     </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>io.helidon.metrics</groupId>
-            <artifactId>helidon-metrics-service-api</artifactId>
-            <version>${helidon.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.helidon.tracing</groupId>
-            <artifactId>helidon-tracing</artifactId>
-            <version>${helidon.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.helidon.tracing</groupId>
-            <artifactId>helidon-tracing-zipkin</artifactId>
-            <version>${helidon.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.helidon.dbclient</groupId>
-            <artifactId>helidon-dbclient-jdbc</artifactId>
-            <version>${helidon.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.helidon.dbclient</groupId>
-            <artifactId>helidon-dbclient-tracing</artifactId>
-            <version>${helidon.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.helidon.dbclient</groupId>
-            <artifactId>helidon-dbclient-metrics</artifactId>
-            <version>${helidon.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.helidon.dbclient</groupId>
-            <artifactId>helidon-dbclient-metrics-jdbc</artifactId>
-            <version>${helidon.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.helidon.dbclient</groupId>
-            <artifactId>helidon-dbclient-health</artifactId>
-            <version>${helidon.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.helidon.dbclient</groupId>
-            <artifactId>helidon-dbclient-jsonp</artifactId>
-            <version>${helidon.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>${mysql.connector.version}</version>
-        </dependency>
-        <!-- <dependency>
-            <groupId>io.helidon.integrations.db</groupId>
-            <artifactId>h2</artifactId>
-            <version>${helidon.version}</version>
-        </dependency> -->
-        <dependency>
-            <groupId>io.helidon.integrations.db</groupId>
-            <artifactId>ojdbc</artifactId>
-            <version>${helidon.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-jdk14</artifactId>
-            <version>2.0.7</version>
-        </dependency>
-        <dependency>
-            <groupId>org.redlich.dbclient.common</groupId>
-            <artifactId>dbclient-common</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.helidon.metrics</groupId>
-            <artifactId>helidon-metrics</artifactId>
-            <version>${helidon.version}</version>
-            <scope>runtime</scope>
-        </dependency>
-    </dependencies>
 
     <build>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>copy-libs</id>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
-                <version>${exec.mojo.version}</version>
+                <version>${exec.maven.plugin.version}</version>
                 <configuration>
                     <mainClass>${mainClass}</mainClass>
                 </configuration>
