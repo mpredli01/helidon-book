@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017, 2021 Oracle and/or its affiliates.
+# Copyright (c) 2024 Oracle and/or its affiliates.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,8 +14,7 @@
 # limitations under the License.
 #
 
-# In config.yaml we are going to override default configuration.
-# It is supposed to be deployment dependent configuration.
+# This configuration file overrides default configuration and is designed to be deployment-dependent.
 
 meta:
   env: PROD
