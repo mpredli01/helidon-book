@@ -44,9 +44,7 @@ public class TestMain {
     }
     @Test
     public void testMain() {
-        /*
-         * TO DO: finish test
-         */
+        // TODO: finish writing test
         WebClient client = startClient();
         assert(true);
         }
