@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <groupId>org.redlich</groupId>
-    <artifactId>helidon-book</artifactId>
+    <parent>
+        <groupId>org.redlich</groupId>
+        <artifactId>helidon-book</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <groupId>org.redlich.config</groupId>
+    <artifactId>config</artifactId>
     <version>1.0-SNAPSHOT</version>
-  </parent>
 
-  <groupId>org.redlich.config</groupId>
-  <artifactId>config</artifactId>
-  <version>1.0-SNAPSHOT</version>
+    <name>Helidon SE Config</name>
+    <description>Example applications corresponding to Chapter 7 of "Helidon Revealed: A Practical Guide to Getting Started with Oracle's Microservices Framework"</description>
+    <url>https://redlich.net</url>
 
-  <name>Helidon Config Example</name>
-  <description>Example corresponding to Chapter 7 of Helidon Revealed</description>
-  <url>https://redlich.net</url>
-
-  <packaging>pom</packaging>
+    <packaging>pom</packaging>
   
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
