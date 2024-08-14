@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <groupId>org.redlich</groupId>
-    <artifactId>helidon-book</artifactId>
+    <parent>
+        <groupId>org.redlich</groupId>
+        <artifactId>helidon-book</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <groupId>org.redlich.config</groupId>
+    <artifactId>config</artifactId>
     <version>1.0-SNAPSHOT</version>
-  </parent>
 
-  <groupId>org.redlich.config</groupId>
-  <artifactId>config</artifactId>
-  <version>1.0-SNAPSHOT</version>
+    <name>Helidon SE Config</name>
+    <description>Example applications corresponding to Chapter 7 of "Helidon Revealed: A Practical Guide to Getting Started with Oracle's Microservices Framework"</description>
+    <url>https://redlich.net</url>
 
-  <name>Helidon Config Example</name>
-  <description>Example application corresponding to Chapter 7 of Helidon Revealed</description>
-  <url>https://redlich.net</url>
-
-  <packaging>pom</packaging>
+    <packaging>pom</packaging>
   
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>21</maven.compiler.source>
-    <maven.compiler.target>21</maven.compiler.target>
-    <!-- <helidon.version>3.2.2</helidon.version> -->
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+    <helidon.version>3.2.4</helidon.version>
     <junit.version>5.10.0</junit.version>
   </properties>
 
@@ -34,51 +34,42 @@
       <plugins>
         <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-clean-plugin</artifactId>
-          <version>3.3.2</version>
+          <version>3.1.0</version>
         </plugin>
         <!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-resources-plugin</artifactId>
-          <version>3.3.1</version>
+          <version>3.0.2</version>
         </plugin>
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.13.0</version>
+          <version>3.8.0</version>
         </plugin>
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>3.2.5</version>
+          <version>2.22.1</version>
         </plugin>
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
-          <version>3.4.1</version>
+          <version>3.0.2</version>
         </plugin>
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-install-plugin</artifactId>
-          <version>3.1.2</version>
+          <version>2.5.2</version>
         </plugin>
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-deploy-plugin</artifactId>
-          <version>3.1.2</version>
+          <version>2.8.2</version>
         </plugin>
         <!-- site lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#site_Lifecycle -->
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
-          <version>3.12.1</version>
+          <version>3.7.1</version>
         </plugin>
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-project-info-reports-plugin</artifactId>
-          <version>3.5.0</version>
+          <version>3.0.0</version>
         </plugin>
       </plugins>
     </pluginManagement>

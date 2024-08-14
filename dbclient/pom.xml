@@ -2,74 +2,134 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <groupId>org.redlich</groupId>
-    <artifactId>helidon-book</artifactId>
+    <parent>
+        <groupId>org.redlich</groupId>
+        <artifactId>helidon-book</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <groupId>org.redlich.dbclient</groupId>
+    <artifactId>dbclient</artifactId>
     <version>1.0-SNAPSHOT</version>
-  </parent>
 
-  <groupId>org.redlich.dbclient</groupId>
-  <artifactId>dbclient</artifactId>
-  <version>1.0-SNAPSHOT</version>
+    <name>Helidon SE DBClient</name>
+    <description>Example applications corresponding to Chapter 8 of "Helidon Revealed: A Practical Guide to Getting Started with Oracle's Microservices Framework"</description>
+    <url>https://redlich.net</url>
 
-  <name>Helidon DBClient Example</name>
-  <description>Example application corresponding to Chapter 8 of Helidon Revealed</description>
-  <url>https://redlich.net</url>
+    <properties>
+        <helidon.dbclient.version>4.0.0-M1</helidon.dbclient.version>
+        <helidon.tracing.zipkin.version>4.0.0-M1</helidon.tracing.zipkin.version>
+        <helidon.metrics.service.version>4.0.0-M1</helidon.metrics.service.version>
+        <mysql.connector.version>8.4.0</mysql.connector.version>
+    </properties>
 
-  <packaging>pom</packaging>
+    <packaging>pom</packaging>
 
-  <build>
-    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
-      <plugins>
-        <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
-        <plugin>
-          <artifactId>maven-clean-plugin</artifactId>
-          <version>3.1.0</version>
-        </plugin>
-        <!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
-        <plugin>
-          <artifactId>maven-resources-plugin</artifactId>
-          <version>3.0.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.8.0</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.22.1</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-jar-plugin</artifactId>
-          <version>3.0.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-install-plugin</artifactId>
-          <version>2.5.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-deploy-plugin</artifactId>
-          <version>2.8.2</version>
-        </plugin>
-        <!-- site lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#site_Lifecycle -->
-        <plugin>
-          <artifactId>maven-site-plugin</artifactId>
-          <version>3.7.1</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-project-info-reports-plugin</artifactId>
-          <version>3.0.0</version>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-  </build>
+    <dependencies>
+        <!-- <dependency>
+            <groupId>org.redlich.dbclient</groupId>
+            <artifactId>dbclient</artifactId>
+            <version>${project.version}</version>
+        </dependency> -->
+        <dependency>
+            <groupId>io.helidon.common</groupId>
+            <artifactId>helidon-common</artifactId>
+            <version>${helidon.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.helidon.common</groupId>
+            <artifactId>helidon-common-mapper</artifactId>
+            <version>${helidon.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.helidon.dbclient</groupId>
+            <artifactId>helidon-dbclient</artifactId>
+            <version>${helidon.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.helidon.dbclient</groupId>
+            <artifactId>helidon-dbclient-jdbc</artifactId>
+            <version>${helidon.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.helidon.dbclient</groupId>
+            <artifactId>helidon-dbclient-mongodb</artifactId>
+            <version>${helidon.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.helidon.dbclient</groupId>
+            <artifactId>helidon-dbclient-tracing</artifactId>
+            <version>${helidon.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.helidon.dbclient</groupId>
+            <artifactId>helidon-dbclient-metrics</artifactId>
+            <version>${helidon.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.helidon.dbclient</groupId>
+            <artifactId>helidon-dbclient-metrics-jdbc</artifactId>
+            <version>${helidon.dbclient.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.helidon.dbclient</groupId>
+            <artifactId>helidon-dbclient-jsonp</artifactId>
+            <version>${helidon.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.helidon.dbclient</groupId>
+            <artifactId>helidon-dbclient-health</artifactId>
+            <version>${helidon.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.helidon.metrics</groupId>
+            <artifactId>helidon-metrics</artifactId>
+            <version>${helidon.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.helidon.metrics</groupId>
+            <artifactId>helidon-metrics-service-api</artifactId>
+            <version>${helidon.metrics.service.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.helidon.tracing</groupId>
+            <artifactId>helidon-tracing</artifactId>
+            <version>${helidon.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.helidon.tracing</groupId>
+            <artifactId>helidon-tracing-zipkin</artifactId>
+            <version>${helidon.tracing.zipkin.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>${mysql.connector.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.helidon.integrations.db</groupId>
+            <artifactId>ojdbc</artifactId>
+            <version>${helidon.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.helidon.integrations.db</groupId>
+            <artifactId>h2</artifactId>
+            <version>${helidon.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-jdk14</artifactId>
+            <version>2.0.13</version>
+        </dependency>
+    </dependencies>
 
-  <modules>
-    <module>jdbc</module>
-    <module>mongodb</module>
-    <module>common</module>
-    <module>pokemons</module>
-  </modules>
+    <modules>
+        <module>common</module>
+        <module>jdbc</module>
+        <module>mongodb</module>
+        <module>pokemons</module>
+    </modules>
 </project>
