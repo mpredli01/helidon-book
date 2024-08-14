@@ -19,6 +19,18 @@
     <url>https://redlich.net</url>
 
   <properties>
+
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+    <helidon.version>4.0.0</helidon.version>
+    <exec.mojo.version>3.1.0</exec.mojo.version>
+    <junit.version>5.10.0</junit.version>
+    <hamcrest.version>2.2</hamcrest.version>
+    <lombok.version>1.18.26</lombok.version>
+    
+ 
+
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
       <maven.compiler.source>17</maven.compiler.source>
       <maven.compiler.target>17</maven.compiler.target>
@@ -32,6 +44,7 @@
       <hamcrest.version>2.2</hamcrest.version>
       <mainClass>org.redlich.security.BasicExampleConfigMain</mainClass>
     </properties>
+
 
     <dependencies>
         <dependency>
