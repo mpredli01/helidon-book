@@ -19,16 +19,16 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>21</maven.compiler.source>
     <maven.compiler.target>21</maven.compiler.target>
-    <helidon.version>3.2.7</helidon.version>
+    <helidon.version>3.2.8</helidon.version>
     <helidon.media.version>3.2.8</helidon.media.version>
 
     
     
     <junit.version>5.10.0</junit.version>
 
-      <helidon.version>4.0.0</helidon.version>
+      <helidon.version>3.2.8</helidon.version>
       <junit.version>5.10.0</junit.version>
-      <helidon.version>3.2.4</helidon.version>
+      <helidon.version>3.2.8</helidon.version>
       <junit.version>5.10.0</junit.version>
       <maven.compiler.source>21</maven.compiler.source>
       <maven.compiler.target>21</maven.compiler.target>
@@ -42,7 +42,7 @@
       <maven.site.plugin.version>3.12.1</maven.site.plugin.version>
       <maven.dependency.plugin.version>3.6.1</maven.dependency.plugin.version>
       <maven.project.info.reports.version>3.5.0</maven.project.info.reports.version>
-      <helidon.version>4.0.10</helidon.version>
+      <helidon.version>3.2.8</helidon.version>
       <helidon.media.version>3.2.8</helidon.media.version>
       <junit.version>5.10.0</junit.version>
     </properties>
