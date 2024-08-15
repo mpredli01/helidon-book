@@ -29,6 +29,9 @@ import org.eclipse.microprofile.metrics.Tag;
 public class HttpStatusMetricFilter implements ContainerResponseFilter {
 
     static final String STATUS_COUNTER_NAME = "httpStatus";
+
+    static final String STATUS_COUNTER_DESCRIPTION = "Counts the number of HTTP responses in each status category (1xx, 2xx, etc.)";
+
     static final String STATUS_TAG_NAME = "range";
 
     @Inject
@@ -40,10 +43,10 @@ public class HttpStatusMetricFilter implements ContainerResponseFilter {
     private void init() {
         Metadata metadata = Metadata.builder()
                 .withName(STATUS_COUNTER_NAME)
-                .withDescription("Counts the number of HTTP responses in each status category (1xx, 2xx, etc.)")
+                .withDescription(STATUS_COUNTER_DESCRIPTION)
                 .withUnit(MetricUnits.NONE)
                 .build();
-        // Declare the counters and keep references to them.
+        // declare the counters and keep references to them
         for (int i = 1; i < responseCounters.length; i++) {
             responseCounters[i] = metricRegistry.counter(metadata, new Tag(STATUS_TAG_NAME, i + "xx"));
             }
@@ -61,4 +64,4 @@ public class HttpStatusMetricFilter implements ContainerResponseFilter {
             responseCounters[range].inc();
             }
         }
-}
+    }

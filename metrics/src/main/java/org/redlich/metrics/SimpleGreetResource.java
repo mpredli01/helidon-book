@@ -41,15 +41,15 @@ import org.eclipse.microprofile.config.inject.ConfigProperty;
 public class SimpleGreetResource {
 
     private static final String PERSONALIZED_GETS_COUNTER_NAME = "personalizedGets";
-    private static final String PERSONALIZED_GETS_COUNTER_DESCRIPTION = "Counts personalized GET operations";
+    private static final String PERSONALIZED_GETS_COUNTER_DESCRIPTION = "Counts the personalized GET operations";
     private static final String GETS_TIMER_NAME = "allGets";
-    private static final String GETS_TIMER_DESCRIPTION = "Tracks all GET operations";
+    private static final String GETS_TIMER_DESCRIPTION = "Tracks all the GET operations";
     private final String message;
 
     @Inject
     public SimpleGreetResource(@ConfigProperty(name = "app.greeting") String message) {
         this.message = message;
-        }
+    }
 
     /**
      * Return a worldly greeting message.
@@ -65,19 +65,14 @@ public class SimpleGreetResource {
         return message;
         }
 
+
     @Path("/{name}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Counted(name = PERSONALIZED_GETS_COUNTER_NAME,
-            absolute = true,
-            description = PERSONALIZED_GETS_COUNTER_DESCRIPTION)
-    @Timed(name = GETS_TIMER_NAME,
-            description = GETS_TIMER_DESCRIPTION,
-            unit = MetricUnits.SECONDS,
-            absolute = true)
+    @Counted(name = PERSONALIZED_GETS_COUNTER_NAME, absolute = true, description = PERSONALIZED_GETS_COUNTER_DESCRIPTION)
+    @Timed(name = GETS_TIMER_NAME, absolute = true, description = GETS_TIMER_DESCRIPTION, unit = MetricUnits.SECONDS)
     public Message getMessage(@PathParam("name") String name) {
         String message = String.format("Hello %s", name);
         return new Message(message);
         }
-
     }
