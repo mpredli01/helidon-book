@@ -1,0 +1,13 @@
+= Chapter 6: Helidon WebClient Component
+
+== Helidon Revealed: A Practical Guide to Getting Started with Oracle's Microservices Framework
+
+=== Introduction
+
+The https://helidon.io/docs/v4/se/webclient[Helidon WebClient] component
+
+In this chapter, you will learn how to initiate the Helidon web client.
+
+=== The Application
+
+=== Build and Execute

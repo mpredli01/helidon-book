@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.redlich.dbclient</groupId>
+        <groupId>org.redlich</groupId>
         <artifactId>dbclient</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>org.redlich.dbclient.mongodb</groupId>
+    <groupId>org.redlich.dbclient</groupId>
     <artifactId>mongodb</artifactId>
     <version>1.0-SNAPSHOT</version>
 
@@ -19,14 +19,12 @@
     <url>https://redlich.net</url>
 
     <properties>
-
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <exec.maven.plugin.version>3.4.1</exec.maven.plugin.version>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <helidon.version>3.2.4</helidon.version>
-        <exec.maven.plugin.version>3.4.1</exec.maven.plugin.version>
+        <helidon.version>3.2.8</helidon.version>
         <junit.version>5.10.0</junit.version>
-        <exec.maven.plugin.version>3.4.1</exec.maven.plugin.version>
         <mainClass>org.redlich.dbclient.mongodb.MongoDbExampleMain</mainClass>
     </properties>
 

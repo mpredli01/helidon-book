@@ -1,0 +1,14 @@
+= Chapter 7: Helidon Config Component
+
+== Helidon Revealed: Practical Guide to Getting Started with Oracle's Microservices Framework
+
+=== Introduction
+
+The https://helidon.io/docs/v4/se/config/introduction[Helidon Config] component
+
+In this chapter, you will learn how to load basic Helidon configuration and load configuration from multiple configuration sources.
+
+=== The Application
+
+=== Build and Execute
+

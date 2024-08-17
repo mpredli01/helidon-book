@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.redlich.dbclient</groupId>
+        <groupId>org.redlich</groupId>
         <artifactId>dbclient</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>org.redlich.dbclient.pokemons</groupId>
+    <groupId>org.redlich.dbclient</groupId>
     <artifactId>pokemons</artifactId>
     <version>1.0-SNAPSHOT</version>
 

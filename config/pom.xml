@@ -8,7 +8,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>org.redlich.config</groupId>
+    <groupId>org.redlich</groupId>
     <artifactId>config</artifactId>
     <version>1.0-SNAPSHOT</version>
 

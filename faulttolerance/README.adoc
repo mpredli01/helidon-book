@@ -1,0 +1,13 @@
+= Chapter 12: Helidon Fault Tolerance
+
+== Helidcon Revealed: A Practical Guide to Getting Started with Oracle's Microservices Framework
+
+=== Introduction
+
+https://helidon.io/docs/v4/mp/fault-tolerance[Helidon Fault Tolerance] is an implementation of the [MicroProfile Fault Tolerance] specfication.
+
+In this chapter, you will learn how to
+
+=== The Application
+
+=== Build and Execute

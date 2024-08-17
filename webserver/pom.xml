@@ -10,7 +10,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>org.redlich.webserver</groupId>
+    <groupId>org.redlich</groupId>
     <artifactId>webserver</artifactId>
     <version>1.0-SNAPSHOT</version>
 
