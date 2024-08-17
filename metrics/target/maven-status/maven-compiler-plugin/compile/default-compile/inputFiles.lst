@@ -1,6 +1,0 @@
-/usr/local/publications/helidon-book/metrics/src/main/java/org/redlich/metrics/package-info.java
-/usr/local/publications/helidon-book/metrics/src/main/java/org/redlich/metrics/HttpStatusMetricFilter.java
-/usr/local/publications/helidon-book/metrics/src/main/java/org/redlich/metrics/GaugeMetric.java
-/usr/local/publications/helidon-book/metrics/src/main/java/org/redlich/metrics/Message.java
-/usr/local/publications/helidon-book/metrics/src/main/java/org/redlich/metrics/TemperatureHistogramFilter.java
-/usr/local/publications/helidon-book/metrics/src/main/java/org/redlich/metrics/SimpleGreetResource.java
