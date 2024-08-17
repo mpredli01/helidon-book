@@ -27,7 +27,7 @@
         <helidon.tracing.zipkin.version>3.2.8</helidon.tracing.zipkin.version>
         <helidon.metrics.service.version>3.2.8</helidon.metrics.service.version>
 
-        <mysql.connector.version>8.4.0</mysql.connector.version>
+        <mysql.connector.version>8.2.0</mysql.connector.version>
     </properties>
 
     <packaging>pom</packaging>
