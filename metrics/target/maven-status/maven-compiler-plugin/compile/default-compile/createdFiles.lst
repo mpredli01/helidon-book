@@ -1,0 +1,6 @@
+org/redlich/metrics/SimpleGreetResource.class
+org/redlich/metrics/HttpStatusMetricFilter.class
+org/redlich/metrics/package-info.class
+org/redlich/metrics/GaugeMetric.class
+org/redlich/metrics/TemperatureHistogramFilter.class
+org/redlich/metrics/Message.class
