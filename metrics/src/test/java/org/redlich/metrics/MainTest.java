@@ -48,7 +48,7 @@ class MainTest {
                 .get(Message.class);
 
         assertThat(message.getMessage(), is("Hello Joe"));
-        Counter counter = registry.counter("personalizedGets");
+        Counter counter = registry.counter("personalizedGetCounter");
         double before = counter.getCount();
 
         message = target.path("simple-greet/Eric")

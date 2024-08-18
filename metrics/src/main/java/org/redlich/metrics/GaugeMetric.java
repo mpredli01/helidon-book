@@ -3,6 +3,7 @@ package org.redlich.metrics;
 import java.time.Duration;
 import java.util.concurrent.atomic.AtomicLong;
 
+import org.eclipse.microprofile.metrics.MetricUnits;
 import org.eclipse.microprofile.metrics.annotation.Gauge;
 
 import jakarta.enterprise.context.ApplicationScoped;
@@ -18,8 +19,8 @@ public class GaugeMetric {
         startTime = new AtomicLong(System.currentTimeMillis());
         }
 
-    @Gauge(unit = "TimeSeconds")
-    public long appUpTimeSeconds() {
+    @Gauge(unit = MetricUnits.SECONDS)
+    public long applicationUpTime() {
         return Duration.ofMillis(System.currentTimeMillis() - startTime.get()).getSeconds();
         }
     }

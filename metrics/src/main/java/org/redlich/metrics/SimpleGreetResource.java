@@ -40,10 +40,10 @@ import org.eclipse.microprofile.config.inject.ConfigProperty;
 @Path("/simple-greet")
 public class SimpleGreetResource {
 
-    private static final String PERSONALIZED_GETS_COUNTER_NAME = "personalizedGets";
-    private static final String PERSONALIZED_GETS_COUNTER_DESCRIPTION = "Counts the personalized GET operations";
-    private static final String GETS_TIMER_NAME = "allGets";
-    private static final String GETS_TIMER_DESCRIPTION = "Tracks all the GET operations";
+    private static final String PERSONALIZED_GETS_COUNTER_NAME = "personalizedGetCounter";
+    private static final String PERSONALIZED_GETS_COUNTER_DESCRIPTION = "Counts the number of personalized GET operations using the /simple-greet/{name} endpoint";
+    private static final String GETS_TIMER_NAME = "personalizedGetTimer";
+    private static final String GETS_TIMER_DESCRIPTION = "Tracks the time for the personalized GET operations using the /simple-greet/{name} endpoint";
     private final String message;
 
     @Inject
