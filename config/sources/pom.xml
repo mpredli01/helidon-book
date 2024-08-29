@@ -21,7 +21,7 @@
 
     <properties>
         <exec.maven.plugin.version>3.4.1</exec.maven.plugin.version>
-        <mainClass>org.redlich.config.sources.Main</mainClass>
+        <mainClass>org.redlich.config.sources.Application</mainClass>
     </properties>
 
     <build>

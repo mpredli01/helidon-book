@@ -17,11 +17,9 @@
     <description>The simplest example shows how to use Configuration API.</description>
     <url>https://redlich.net</url>
 
-    <packaging>jar</packaging>
-
     <properties>
         <exec.maven.plugin.version>3.4.1</exec.maven.plugin.version>
-        <mainClass>org.redlich.config.basic.Main</mainClass>
+        <mainClass>org.redlich.config.basic.Application</mainClass>
     </properties>
 
     <build>

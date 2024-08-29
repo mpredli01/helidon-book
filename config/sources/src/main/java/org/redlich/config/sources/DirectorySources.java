@@ -16,7 +16,6 @@
 
 package org.redlich.config.sources;
 
-import io.helidon.logging.common.LogConfig;
 import io.helidon.config.Config;
 
 import static io.helidon.config.ConfigSources.directory;
@@ -24,9 +23,9 @@ import static io.helidon.config.ConfigSources.directory;
 /**
  * This example shows how to read configuration from several files placed in selected directory.
  */
-public class DirectorySourceExample {
+public class DirectorySources {
 
-    private DirectorySourceExample() {
+    private DirectorySources() {
         }
 
     /**

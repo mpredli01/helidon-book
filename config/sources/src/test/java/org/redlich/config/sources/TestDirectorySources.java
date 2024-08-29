@@ -23,7 +23,7 @@ import org.junit.jupiter.api.Test;
 
 import static io.helidon.config.ConfigSources.*;
 
-public class TestDirectorySourceExample {
+public class TestDirectorySources {
 
     @BeforeAll
     public Config getConfig() {

@@ -8,13 +8,14 @@ import io.helidon.webserver.http.HttpRouting;
 /**
  * The application main class.
  */
-public class Main {
+public class Application {
+
 
     /**
      * Cannot be instantiated.
      */
-    private Main() {
-    }
+    private Application() {
+        }
 
 
     /**
@@ -32,11 +33,12 @@ public class Main {
 
         WebServer server = WebServer.builder()
                 .config(config.get("server"))
-                .routing(Main::routing)
+                .routing(Application::routing)
                 .build()
                 .start();
         System.out.println("WEB server is up! http://localhost:" + server.port() + "/simple-greet");
         }
+
 
     /**
      * Updates HTTP Routing.
@@ -44,7 +46,6 @@ public class Main {
     static void routing(HttpRouting.Builder routing) {
         routing
                 .register("/greet", new GreetService())
-                .get("/simple-greet", (req, res) -> res.send("Hello World!"))
-                .get("/greet-mike", (req, res) -> res.send("Hello, Mike!"));
+                .get("/simple-greet", (request, response) -> response.send("Hello World!"));
         }
     }

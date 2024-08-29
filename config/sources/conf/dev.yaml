@@ -22,7 +22,7 @@
 # */conf/dev.yaml
 
 meta:
-  env: DEV
+  env: development
 
 component:
   audit:

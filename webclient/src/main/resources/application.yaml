@@ -22,7 +22,7 @@ client:
   connect-timeout-millis: 2080
   read-timeout-millis: 2000
   follow-redirects: true
-  max-redirects: 5
+  max-redirects: 8
   cookies:
     automatic-store-enabled: true
     default-cookies:

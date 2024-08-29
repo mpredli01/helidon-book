@@ -25,7 +25,7 @@ import java.util.List;
 
 import static io.helidon.config.ConfigSources.classpath;
 
-public class TestMain {
+public class TestApplication {
 
     @BeforeAll
     public Config getConfig() {

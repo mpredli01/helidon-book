@@ -21,9 +21,9 @@ import io.helidon.logging.common.LogConfig;
 /**
  * Runs every example main class in this module/package.
  */
-public class Main {
+public class Application {
 
-    private Main() {
+    private Application() {
         }
 
     /**
@@ -34,9 +34,9 @@ public class Main {
     public static void main(String[] args) {
         LogConfig.configureRuntime();
         displaySplashScreen();
-        WithSourcesExample.main(args);
-        LoadSourcesExample.main(args);
-        DirectorySourceExample.main(args);
+        MergeSources.main(args);
+        MultipleConfigSources.main(args);
+        DirectorySources.main(args);
         }
 
     public static void displaySplashScreen() {

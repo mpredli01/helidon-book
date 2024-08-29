@@ -17,37 +17,17 @@
 package org.redlich.config.sources;
 
 import io.helidon.config.Config;
+
 import io.helidon.config.ConfigValue;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
-import static io.helidon.config.ConfigSources.classpath;
-import static io.helidon.config.ConfigSources.file;
+import static io.helidon.config.ConfigSources.*;
 
-/**
- * This example shows how to merge the configuration from different sources
- * loaded from meta configuration.
- *
- * @see WithSourcesExample
- */
-public class LoadSourcesExample {
+public class TestMetaConfigSources {
 
-    private LoadSourcesExample() {
-        }
-
-    /**
-     * Executes the example.
-     *
-     * @param args arguments
-     */
-    public static void main(String... args) {
-        /*
-         * Creates a configuration from list of config sources loaded from meta sources:
-         *  - conf/meta-config.yaml - - deployment dependent meta-config file, loaded from file on filesystem;
-         *  - meta-config.yaml - application default meta-config file, loaded form classpath;
-         * with a filter which convert values with keys ending with "level" to upper case
-         */
-
-        displaySplashScreen();
-
+    @BeforeAll
+    public Config getConfig() {
         Config metaConfig = Config.create(file("conf/meta-config.yaml").optional(),
                 classpath("meta-config.yaml"));
 
@@ -55,37 +35,28 @@ public class LoadSourcesExample {
                 .config(metaConfig)
                 .addFilter((key, stringValue) -> key.name().equals("level") ? stringValue.toUpperCase() : stringValue)
                 .build();
+        return config;
+        }
+
+    @Test
+    public void testLoadSourcesExample() {
+        Config config = getConfig();
 
         // Optional environment type, from dev.yaml:
         ConfigValue<String> env = config.get("meta.env").asString();
         env.ifPresent(e -> System.out.println("[APP] Environment: " + e));
+        assert env.get().equals("DEV");
 
         // Default value (default.yaml): Config Sources Example
         String appName = config.get("app.name").asString().get();
-        System.out.println("[APP] Name: " + appName);
+        assert appName.equals("Config Sources Example");
 
         // Page size, from config.yaml: 10
         int pageSize = config.get("app.page-size").asInt().get();
-        System.out.println("[APP] Page size: " + pageSize);
+        assert pageSize == 10;
 
         // Applied filter (uppercase logging level), from dev.yaml: finest -> FINEST
         String level = config.get("component.audit.logging.level").asString().get();
-        System.out.println("[APP] Level: " + level);
-        }
-
-    public static void displaySplashScreen() {
-        String title = " Load Sources Example ";
-        int length = title.length();
-
-        System.out.println();
-        System.out.print("[APP] ");
-        for (int i = 0; i < length; ++i)
-            System.out.print("-");
-        System.out.println();
-        System.out.println("[APP] " + title);
-        System.out.print("[APP] ");
-        for (int i = 0; i < length; ++i)
-            System.out.print("-");
-        System.out.println();
-        }
+        assert level.equals("FINE");
     }
+}

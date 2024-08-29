@@ -20,16 +20,19 @@
 
     <properties>
         <exec.maven.plugin.version>3.4.1</exec.maven.plugin.version>
-        <!-- using latest version of Helidon 3.0 release train due to breaking changes in Helidon 4.0 -->
-        <helidon.version>3.2.8</helidon.version>
         <lombok.version>1.18.32</lombok.version>
-        <mainClass>org.redlich.webclient.Main</mainClass>
+        <mainClass>org.redlich.webclient.ServerApplication</mainClass>
     </properties>
 
     <dependencies>
         <dependency>
+            <groupId>io.helidon.common</groupId>
+            <artifactId>helidon-common-reactive</artifactId>
+            <version>${helidon.version}</version>
+        </dependency>
+        <dependency>
             <groupId>io.helidon.webclient</groupId>
-            <artifactId>helidon-webclient</artifactId>
+            <artifactId>helidon-webclient-metrics</artifactId>
             <version>${helidon.version}</version>
         </dependency>
         <dependency>
@@ -49,6 +52,6 @@
                     <mainClass>${mainClass}</mainClass>
                 </configuration>
             </plugin>
-    </plugins>
+        </plugins>
     </build>
 </project>

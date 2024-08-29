@@ -25,11 +25,11 @@ import static io.helidon.config.ConfigSources.file;
 /**
  * This example shows how to merge the configuration from different sources.
  *
- * @see LoadSourcesExample
+ * @see MultipleConfigSources
  */
-public class WithSourcesExample {
+public class MergeSources {
 
-    private WithSourcesExample() {
+    private MergeSources() {
         }
 
     /**
@@ -72,7 +72,7 @@ public class WithSourcesExample {
         }
 
     public static void displaySplashScreen() {
-        String title = " With Sources Example ";
+        String title = " Merge Sources ";
         int length = title.length();
 
         System.out.println();

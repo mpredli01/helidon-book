@@ -22,7 +22,7 @@ This example demonstrates how to load configuration from multiple configuration 
 
 Please refer to the specific `README.md` files for
 ```bash
-mainClass=org.redlich.config.sources.Main
+mainClass=org.redlich.config.sources.Application
 $ mvn clean compile exec:java 
 ```
 

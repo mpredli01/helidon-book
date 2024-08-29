@@ -17,7 +17,7 @@
 # This configuration file overrides default configuration and is designed to be deployment-dependent.
 
 meta:
-  env: PROD
+  env: production
 
 app:
   page-size: 10

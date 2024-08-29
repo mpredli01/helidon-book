@@ -27,9 +27,9 @@ import static io.helidon.config.ConfigSources.classpath;
 /**
  * Basic example.
  */
-public class Main {
+public class Application {
 
-    private Main() {
+    private Application() {
         }
 
     /**

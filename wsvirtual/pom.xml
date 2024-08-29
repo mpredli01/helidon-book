@@ -20,16 +20,8 @@
     
     <properties>
         <exec.maven.plugin.version>3.4.1</exec.maven.plugin.version>
-        <mainClass>org.redlich.wsvirtual.Main</mainClass>
+        <mainClass>org.redlich.wsvirtual.Application</mainClass>
     </properties>
-
-    <!-- <dependencies>
-        <dependency>
-            <groupId>io.helidon.webserver</groupId>
-            <artifactId>helidon-webserver</artifactId>
-            <version>${helidon.version}</version>
-        </dependency>
-    </dependencies> -->
 
     <build>
         <plugins>

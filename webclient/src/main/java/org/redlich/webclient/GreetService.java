@@ -1,10 +1,12 @@
-package org.redlich.wsvirtual;
+package org.redlich.webclient;
 
 import java.util.Collections;
 import java.util.concurrent.atomic.AtomicReference;
 
 import io.helidon.config.Config;
+import io.helidon.http.HeaderNames;
 import io.helidon.http.Status;
+import io.helidon.webserver.WebServer;
 import io.helidon.webserver.http.HttpRules;
 import io.helidon.webserver.http.HttpService;
 import io.helidon.webserver.http.ServerRequest;
@@ -18,17 +20,18 @@ import jakarta.json.JsonObject;
  * A simple service to greet you. Examples:
  * <p>
  * Get default greeting message:
- * {@code curl -X GET http://localhost:8080/greet}
+ * curl -X GET http://localhost:8080/greet
  * <p>
  * Get greeting message for Joe:
- * {@code curl -X GET http://localhost:8080/greet/Joe}
+ * curl -X GET http://localhost:8080/greet/Joe
  * <p>
  * Change greeting
- * {@code curl -X PUT -H "Content-Type: application/json" -d '{"greeting" : "Howdy"}' http://localhost:8080/greet/greeting}
+ * curl -X PUT -H "Content-Type: application/json" -d '{"greeting" : "Howdy"}' http://localhost:8080/greet/greeting
  * <p>
  * The message is returned as a JSON object
  */
-class GreetService implements HttpService {
+
+public class GreetService implements HttpService {
 
     private static final JsonBuilderFactory JSON = Json.createBuilderFactory(Collections.emptyMap());
 
@@ -38,12 +41,9 @@ class GreetService implements HttpService {
     private final AtomicReference<String> greeting = new AtomicReference<>();
 
     GreetService() {
-        this(Config.global().get("app"));
-        }
-
-    GreetService(Config appConfig) {
-        greeting.set(appConfig.get("greeting").asString().orElse("Ciao"));
-        }
+        Config config = Config.global();
+        greeting.set(config.get("app.greeting").asString().orElse("Ciao"));
+    }
 
     /**
      * A service registers itself by updating the routing rules.
@@ -52,11 +52,11 @@ class GreetService implements HttpService {
      */
     @Override
     public void routing(HttpRules rules) {
-        rules
-                .get("/", this::getDefaultMessageHandler)
+        rules.get("/", this::getDefaultMessageHandler)
+                .get("/redirect", this::redirect)
                 .get("/{name}", this::getMessageHandler)
                 .put("/greeting", this::updateGreetingHandler);
-        }
+    }
 
     /**
      * Return a worldly greeting message.
@@ -64,9 +64,24 @@ class GreetService implements HttpService {
      * @param request  the server request
      * @param response the server response
      */
-    private void getDefaultMessageHandler(ServerRequest request, ServerResponse response) {
+    private void getDefaultMessageHandler(ServerRequest request,
+                                          ServerResponse response) {
         sendResponse(response, "World");
-        }
+    }
+
+    /**
+     * Return a status code of {@link io.helidon.http.Status#MOVED_PERMANENTLY_301} and the new location where should
+     * client redirect.
+     *
+     * @param request  the server request
+     * @param response the server response
+     */
+    private void redirect(ServerRequest request,
+                          ServerResponse response) {
+        int port = request.context().get(WebServer.class).orElseThrow().port();
+        response.headers().add(HeaderNames.LOCATION, "http://localhost:" + port + "/greet/");
+        response.status(Status.MOVED_PERMANENTLY_301).send();
+    }
 
     /**
      * Return a greeting message using the name that was provided.
@@ -74,10 +89,23 @@ class GreetService implements HttpService {
      * @param request  the server request
      * @param response the server response
      */
-    private void getMessageHandler(ServerRequest request, ServerResponse response) {
+    private void getMessageHandler(ServerRequest request,
+                                   ServerResponse response) {
         String name = request.path().pathParameters().get("name");
         sendResponse(response, name);
-        }
+    }
+
+    /**
+     * Set the greeting to use in future messages.
+     *
+     * @param request  the server request
+     * @param response the server response
+     */
+    private void updateGreetingHandler(ServerRequest request,
+                                       ServerResponse response) {
+        JsonObject jsonObject = request.content().as(JsonObject.class);
+        updateGreetingFromJson(jsonObject, response);
+    }
 
     private void sendResponse(ServerResponse response, String name) {
         String msg = String.format("%s %s!", greeting.get(), name);
@@ -86,7 +114,7 @@ class GreetService implements HttpService {
                 .add("message", msg)
                 .build();
         response.send(returnObject);
-        }
+    }
 
     private void updateGreetingFromJson(JsonObject jo, ServerResponse response) {
 
@@ -97,19 +125,9 @@ class GreetService implements HttpService {
             response.status(Status.BAD_REQUEST_400)
                     .send(jsonErrorObject);
             return;
-            }
+        }
 
         greeting.set(jo.getString("greeting"));
         response.status(Status.NO_CONTENT_204).send();
-        }
-
-    /**
-     * Set the greeting to use in future messages.
-     *
-     * @param request  the server request
-     * @param response the server response
-     */
-    private void updateGreetingHandler(ServerRequest request, ServerResponse response) {
-        updateGreetingFromJson(request.content().as(JsonObject.class), response);
-        }
     }
+}
