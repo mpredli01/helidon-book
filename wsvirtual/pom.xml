@@ -17,7 +17,7 @@
     <name>Helidon SE Virtual WebServer</name>
     <description>Example application corresponding to Chapter 5 of "Helidon Revealed: A Practical Guide to Getting Started with Oracle's Microservices Framework"</description>
     <url>https://redlich.net</url>
-
+    
     <properties>
         <exec.maven.plugin.version>3.4.1</exec.maven.plugin.version>
         <mainClass>org.redlich.wsvirtual.Main</mainClass>

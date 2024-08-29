@@ -15,23 +15,3 @@
  */
 
 package org.redlich.security;
-
-import java.net.URI;
-
-import io.helidon.webserver.testing.junit5.SetUpServer;
-import io.helidon.webserver.WebServerConfig;
-
-/**
- * Unit test for {@link BasicAuthenticationConfig}.
- */
-public class BasicExampleConfigTest extends BasicExampleTest {
-
-    public BasicExampleConfigTest(URI uri) {
-        super(uri);
-        }
-
-    @SetUpServer
-    public static void setup(WebServerConfig.Builder server) {
-        BasicAuthenticationConfig.setup(server);
-        }
-    }

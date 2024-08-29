@@ -44,6 +44,7 @@ public class Main {
     static void routing(HttpRouting.Builder routing) {
         routing
                 .register("/greet", new GreetService())
-                .get("/simple-greet", (req, res) -> res.send("Hello World!"));
+                .get("/simple-greet", (req, res) -> res.send("Hello World!"))
+                .get("/greet-mike", (req, res) -> res.send("Hello, Mike!"));
         }
     }

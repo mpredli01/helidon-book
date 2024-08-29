@@ -21,11 +21,9 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <exec.maven.plugin.version>3.4.1</exec.maven.plugin.version>
-        <helidon.version>3.2.8</helidon.version>
         <hamcrest.version>2.2</hamcrest.version>
         <lombok.version>1.18.26</lombok.version>
-        <hamcrest.version>2.2</hamcrest.version>
-        <mainClass>org.redlich.security.BasicExampleConfigMain</mainClass>
+        <mainClass>org.redlich.security.BasicAuthenticationConfig</mainClass>
     </properties>
 
     <dependencies>
@@ -35,18 +33,13 @@
             <version>${helidon.version}</version>
         </dependency>
         <dependency>
-            <groupId>io.helidon.security.integration</groupId>
-            <artifactId>helidon-security-integration-webserver</artifactId>
+            <groupId>io.helidon.webserver</groupId>
+            <artifactId>helidon-webserver-security</artifactId>
             <version>${helidon.version}</version>
         </dependency>
         <dependency>
             <groupId>io.helidon.security.providers</groupId>
             <artifactId>helidon-security-providers-http-auth</artifactId>
-            <version>${helidon.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.helidon.webserver</groupId>
-            <artifactId>helidon-webserver</artifactId>
             <version>${helidon.version}</version>
         </dependency>
         <dependency>
@@ -67,18 +60,13 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>io.helidon.config</groupId>
-            <artifactId>helidon-config</artifactId>
-            <version>${helidon.version}</version>
+            <groupId>io.helidon.webserver.testing.junit5</groupId>
+            <artifactId>helidon-webserver-testing-junit5</artifactId>
+            <version>4.1.0</version>
         </dependency>
         <dependency>
             <groupId>io.helidon.config</groupId>
             <artifactId>helidon-config-encryption</artifactId>
-            <version>${helidon.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.helidon.config</groupId>
-            <artifactId>helidon-config-yaml</artifactId>
             <version>${helidon.version}</version>
         </dependency>
         <dependency>
