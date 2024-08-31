@@ -15,3 +15,29 @@
  */
 
 package org.redlich.webserver;
+
+// import static org.junit.Assert.assertTrue;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+
+/**
+ * Unit test for simple App.
+ */
+public class TestApplication {
+
+    @BeforeAll
+    static void setup() {
+        // log.info("@BeforeAll - executes once before all test methods in this class");
+        }
+
+
+    /**
+     * Rigorous Test :-)
+     */
+    @Test
+    public void shouldAnswerWithTrue() {
+        assertTrue( true );
+        }
+    }

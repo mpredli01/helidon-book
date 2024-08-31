@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.redlich.webserver;
+package org.redlich.wsreactive;
 
 import java.util.Collections;
 import java.util.logging.Logger;

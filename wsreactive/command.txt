@@ -1,1 +1,1 @@
-mvn exec:java -Dexec.mainClass=org.redlich.webserver.Main
+mvn exec:java -Dexec.mainClass=org.redlich.wsreactive.Application

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.redlich.webserver;
+package org.redlich.wsreactive;
 
 import io.helidon.common.LogConfig;
 import io.helidon.config.Config;
@@ -30,7 +30,7 @@ import io.helidon.webserver.WebServer;
  * Hello world!
  *
  */
-public class Main {
+public class Application {
     public static void main(final String[] args ) {
         startServer();
         }
