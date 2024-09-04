@@ -3,14 +3,12 @@ package org.redlich.faulttolerance;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
-import jakarta.ws.rs.Produces;
-import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import org.eclipse.microprofile.faulttolerance.Fallback;
 import org.eclipse.microprofile.faulttolerance.Retry;
 
 @Path("/ft")
-public class FtResource {
+public class FaultToleranceResource {
 
     private static int retry;
 
@@ -19,9 +17,9 @@ public class FtResource {
     @GET
     public Response fallbackHandler(@PathParam("success") String success) {
         if (!Boolean.parseBoolean(success)) {
-            deadEnd();
+            terminate();
             }
-        return reactiveData();
+        return reactive();
         }
 
     @Retry(maxRetries = 2)
@@ -29,14 +27,14 @@ public class FtResource {
     @GET
     public Response retryHandler() {
         if (++retry < 2)  {
-            deadEnd();
+            terminate();
             }
         String response = String.format("Number of failures: %s", retry);
         retry = 0;
         return Response.ok(response).build();
         }
 
-    private void deadEnd() {
+    private void terminate() {
         throw new RuntimeException("Failure");
         }
 
@@ -44,16 +42,16 @@ public class FtResource {
         return Response.ok("Fallback endpoint reached").build();
         }
 
-    private Response reactiveData() {
-        return Response.ok(blockingData()).build();
+    private Response reactive() {
+        return Response.ok(blocking()).build();
         }
 
-    private String blockingData() {
+    private String blocking() {
         try {
-            Thread.sleep(100);
+            Thread.sleep(5000);
             }
         catch (InterruptedException ignored) {
             }
-        return "Blocked for 100 milliseconds";
+        return "Blocked for 5 seconds";
         }
     }
