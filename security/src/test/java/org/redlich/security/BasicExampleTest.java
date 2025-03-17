@@ -74,9 +74,9 @@ public abstract class BasicExampleTest {
         testNotAuthorized(uri);
 
         // Must be accessible with authentication - to everybody
-        testProtected(uri, "jack", "password", Set.of("admin", "user"), Set.of());
-        testProtected(uri, "jill", "password", Set.of("user"), Set.of("admin"));
-        testProtected(uri, "john", "password", Set.of(), Set.of("admin", "user"));
+        testProtected(uri, "mike", "password", Set.of("admin", "user"), Set.of());
+        testProtected(uri, "rowena", "password", Set.of("user"), Set.of("admin"));
+        testProtected(uri, "ian", "password", Set.of(), Set.of("admin", "user"));
         }
 
     @Test
@@ -86,9 +86,9 @@ public abstract class BasicExampleTest {
         testNotAuthorized(uri);
 
         // Jack and Jill allowed (user role)
-        testProtected(uri, "jack", "password", Set.of("admin", "user"), Set.of());
-        testProtected(uri, "jill", "password", Set.of("user"), Set.of("admin"));
-        testProtectedDenied(uri, "john", "password");
+        testProtected(uri, "mike", "password", Set.of("admin", "user"), Set.of());
+        testProtected(uri, "rowena", "password", Set.of("user"), Set.of("admin"));
+        testProtectedDenied(uri, "ian", "password");
         }
 
     @Test
@@ -97,10 +97,10 @@ public abstract class BasicExampleTest {
 
         testNotAuthorized(uri);
 
-        //Only jack is allowed - admin role...
-        testProtected(uri, "jack", "password", Set.of("admin", "user"), Set.of());
-        testProtectedDenied(uri, "jill", "password");
-        testProtectedDenied(uri, "john", "password");
+        //Only mike is allowed - admin role...
+        testProtected(uri, "mike", "password", Set.of("admin", "user"), Set.of());
+        testProtectedDenied(uri, "rowena", "password");
+        testProtectedDenied(uri, "ian", "password");
         }
 
     @Test
@@ -110,9 +110,9 @@ public abstract class BasicExampleTest {
         testNotAuthorized(uri);
 
         // nobody has the correct role
-        testProtectedDenied(uri, "jack", "password");
-        testProtectedDenied(uri, "jill", "password");
-        testProtectedDenied(uri, "john", "password");
+        testProtectedDenied(uri, "mike", "password");
+        testProtectedDenied(uri, "rowena", "password");
+        testProtectedDenied(uri, "ian", "password");
         }
 
     @Test

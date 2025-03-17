@@ -14,31 +14,13 @@
 # limitations under the License.
 #
 
-server:
-  port: 8080
-  host: 0.0.0.0
-
-client:
-  connect-timeout-millis: 2080
-  read-timeout-millis: 2000
-  follow-redirects: true
-  max-redirects: 8
-  cookies:
-    automatic-store-enabled: true
-    default-cookies:
-    - name: "env"
-      value: "dev"
-  headers:
-    - name: "Accept"
-      value: ["application/json","text/plain"]
-  services:
-    config:
-      metrics:
-      - methods: ["PUT","POST","DELETE"]
-        Type: METER
-
 app:
   greeting: "Hello"
 
-security:
-  enabled: false
+server:
+  port: -1
+  host: 0.0.0.0
+
+client:
+  follow-redirects: true
+  max-redirects: 8

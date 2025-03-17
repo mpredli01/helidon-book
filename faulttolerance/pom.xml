@@ -18,6 +18,8 @@
     <description>Example applications corresponding to Chapter 12 of "Helidon Revealed: A Practical Guide to Getting Started with Oracle's Microservices Framework"</description>
     <url>https://redlich.net</url>
 
+    <packaging>jar</packaging>
+
     <dependencies>
         <dependency>
             <groupId>io.helidon.microprofile.bundles</groupId>

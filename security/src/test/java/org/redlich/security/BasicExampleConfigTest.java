@@ -22,7 +22,7 @@ import io.helidon.webserver.testing.junit5.SetUpServer;
 import io.helidon.webserver.WebServerConfig;
 
 /**
- * Unit test for {@link BasicAuthenticationConfig}.
+ * Unit test for {@link ConfigAuthenticationApplication}.
  */
 public class BasicExampleConfigTest extends BasicExampleTest {
 
@@ -32,6 +32,6 @@ public class BasicExampleConfigTest extends BasicExampleTest {
 
     @SetUpServer
     public static void setup(WebServerConfig.Builder server) {
-        BasicAuthenticationConfig.setup(server);
+        ConfigAuthenticationApplication.setup(server);
         }
     }

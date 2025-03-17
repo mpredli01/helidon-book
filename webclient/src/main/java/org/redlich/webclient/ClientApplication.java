@@ -60,11 +60,12 @@ public class ClientApplication {
             if (!port.isPresent() || port.get() == -1) {
                 throw new IllegalStateException("Unknown port! Please specify port as a main method parameter "
                         + "or directly to config server.port");
-            }
+                }
             url = "http://localhost:" + port.get() + "/greet";
-        } else {
+            }
+        else {
             url = "http://localhost:" + Integer.parseInt(args[0]) + "/greet";
-        }
+            }
 
         WebClient client = WebClient.builder()
                 .baseUri(url)
@@ -119,17 +120,19 @@ public class ClientApplication {
         Path file = Paths.get("test.txt");
         try {
             Files.deleteIfExists(file);
-        } catch (IOException e) {
+            }
+        catch (IOException e) {
             e.printStackTrace();
-        }
+            }
 
         System.out.println("Downloading server response to file: " + file);
         try (HttpClientResponse response = client.get().request()) {
             Files.copy(response.entity().inputStream(), file);
             System.out.println("Download complete!");
-        } catch (IOException e) {
+            }
+        catch (IOException e) {
             throw new UncheckedIOException(e);
-        }
+            }
     }
 
     static String clientMetricsExample(String url, Config config) {
@@ -151,10 +154,10 @@ public class ClientApplication {
                 .addService(clientService)
                 .build();
 
-        //Perform any GET request using this newly created WebClient instance.
+        // Perform any GET request using this newly created WebClient instance.
         String result = performGetMethod(client);
         //Verification for example purposes that metric has been incremented.
         System.out.println(counterName + ": " + counter.count());
         return result;
+        }
     }
-}

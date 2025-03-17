@@ -49,15 +49,21 @@ public class Application {
         Config config = Config.create(classpath(configFile));
         System.out.println("[APP] Reading configuration from '" + configFile + "'");
 
-        
-        int pageSize = config.get("app.page-size").asInt().get();
+        String name = config.get("app.name").asString().get();
+        int age = config.get("app.age").asInt().get();
+        String employer = config.get("app.employer").asString().get();
+        List<Integer> employedFrom = config.get("app.employed-from").asList(Integer.class).get();
+
         boolean storageEnabled = config.get("app.storageEnabled").asBoolean().orElse(false);
-        List<Integer> basicRange = config.get("app.basic-range").asList(Integer.class).get();
         Path loggingOutputPath = config.get("logging.outputs.file.name").as(Path.class).get();
 
-        System.out.println("[APP] 'page-size' configured value = " + pageSize);
+        System.out.println("[APP] name: " + name);
+        System.out.println("[APP] age: " + age);
+        System.out.println("[APP] employer: " + employer);
+        System.out.println("[APP] emploed from: " + employedFrom);
+        
         System.out.println("[APP] 'storageEnabled' configured value = " + storageEnabled);
-        System.out.println("[APP] 'basic-range' configured value = " + basicRange);
+        // System.out.println("[APP] 'basic-range' configured value = " + basicRange);
         System.out.println("[APP] 'logging.outputs.file.name' configured value = " + loggingOutputPath);
         System.out.println();
         }

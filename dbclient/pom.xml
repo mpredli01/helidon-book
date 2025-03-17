@@ -19,13 +19,13 @@
     <url>https://redlich.net</url>
 
     <properties>
-        <!-- <helidon.dbclient.version>4.0.0-M1</helidon.dbclient.version>
-        <helidon.tracing.zipkin.version>4.0.0-M1</helidon.tracing.zipkin.version>
-        <helidon.metrics.service.version>4.0.0-M1</helidon.metrics.service.version> -->
+        <helidon.dbclient.version>4.1.0</helidon.dbclient.version>
+        <helidon.tracing.zipkin.version>4.1.0</helidon.tracing.zipkin.version>
+        <helidon.metrics.service.version>4.1.0</helidon.metrics.service.version>
 
-        <helidon.dbclient.version>3.2.8</helidon.dbclient.version>
+        <!-- <helidon.dbclient.version>3.2.8</helidon.dbclient.version>
         <helidon.tracing.zipkin.version>3.2.8</helidon.tracing.zipkin.version>
-        <helidon.metrics.service.version>3.2.8</helidon.metrics.service.version>
+        <helidon.metrics.service.version>3.2.8</helidon.metrics.service.version> -->
 
         <mysql.connector.version>8.4.0</mysql.connector.version>
     </properties>
@@ -39,33 +39,23 @@
             <version>${project.version}</version>
         </dependency> -->
         <dependency>
-            <groupId>io.helidon.common</groupId>
-            <artifactId>helidon-common</artifactId>
-            <version>${helidon.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.helidon.common</groupId>
-            <artifactId>helidon-common-mapper</artifactId>
-            <version>${helidon.version}</version>
-        </dependency>
-        <dependency>
             <groupId>io.helidon.dbclient</groupId>
             <artifactId>helidon-dbclient</artifactId>
             <version>${helidon.version}</version>
         </dependency>
         <dependency>
-            <groupId>io.helidon.dbclient</groupId>
-            <artifactId>helidon-dbclient-jdbc</artifactId>
+            <groupId>jakarta.json</groupId>
+            <artifactId>jakarta.json-api</artifactId>
+            <version>2.1.3</version>
+        </dependency>
+        <dependency>
+            <groupId>io.helidon.webserver.observe</groupId>
+            <artifactId>helidon-webserver-observe-metrics</artifactId>
             <version>${helidon.version}</version>
         </dependency>
         <dependency>
-            <groupId>io.helidon.dbclient</groupId>
-            <artifactId>helidon-dbclient-mongodb</artifactId>
-            <version>${helidon.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.helidon.dbclient</groupId>
-            <artifactId>helidon-dbclient-tracing</artifactId>
+            <groupId>io.helidon.webserver.observe</groupId>
+            <artifactId>helidon-webserver-observe-health</artifactId>
             <version>${helidon.version}</version>
         </dependency>
         <dependency>
@@ -75,39 +65,13 @@
         </dependency>
         <dependency>
             <groupId>io.helidon.dbclient</groupId>
-            <artifactId>helidon-dbclient-metrics-jdbc</artifactId>
-            <version>${helidon.dbclient.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.helidon.dbclient</groupId>
-            <artifactId>helidon-dbclient-jsonp</artifactId>
+            <artifactId>helidon-dbclient-tracing</artifactId>
             <version>${helidon.version}</version>
         </dependency>
         <dependency>
             <groupId>io.helidon.dbclient</groupId>
             <artifactId>helidon-dbclient-health</artifactId>
             <version>${helidon.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.helidon.metrics</groupId>
-            <artifactId>helidon-metrics</artifactId>
-            <version>${helidon.version}</version>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.helidon.metrics</groupId>
-            <artifactId>helidon-metrics-service-api</artifactId>
-            <version>${helidon.metrics.service.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.helidon.tracing</groupId>
-            <artifactId>helidon-tracing</artifactId>
-            <version>${helidon.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.helidon.tracing</groupId>
-            <artifactId>helidon-tracing-zipkin</artifactId>
-            <version>${helidon.tracing.zipkin.version}</version>
         </dependency>
         <dependency>
             <groupId>com.mysql</groupId>

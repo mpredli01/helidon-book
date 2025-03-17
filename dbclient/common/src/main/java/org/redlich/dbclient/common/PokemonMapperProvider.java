@@ -17,16 +17,15 @@
 package org.redlich.dbclient.common;
 
 import java.util.Optional;
-
+import io.helidon.common.Weight;
 import io.helidon.dbclient.DbMapper;
 import io.helidon.dbclient.spi.DbMapperProvider;
 
-import jakarta.annotation.Priority;
 
 /**
  * Provides pokemon mappers.
  */
-@Priority(1000)
+@Weight(1000)
 public class PokemonMapperProvider implements DbMapperProvider {
     private static final PokemonMapper MAPPER = new PokemonMapper();
 

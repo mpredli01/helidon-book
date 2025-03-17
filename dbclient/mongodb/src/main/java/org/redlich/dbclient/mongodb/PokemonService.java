@@ -16,24 +16,24 @@
 
 package org.redlich.dbclient.mongodb;
 
-import io.helidon.dbclient.DbClient;
-import io.helidon.webserver.ServerRequest;
-import io.helidon.webserver.ServerResponse;
-
 import org.redlich.dbclient.common.AbstractPokemonService;
+
+import io.helidon.dbclient.DbClient;
+import io.helidon.webserver.http.ServerRequest;
+import io.helidon.webserver.http.ServerResponse;
 
 /**
  * A simple service to greet you. Examples:
- *
+ * <p>
  * Get default greeting message:
- * curl -X GET http://localhost:8080/greet
- *
+ * curl -X GET {@code http://localhost:8080/greet}
+ * <p>
  * Get greeting message for Joe:
- * curl -X GET http://localhost:8080/greet/Joe
- *
+ * curl -X GET {@code http://localhost:8080/greet/Joe}
+ * <p>
  * Change greeting
- * curl -X PUT http://localhost:8080/greet/greeting/Hola
- *
+ * curl -X PUT {@code http://localhost:8080/greet/greeting/Hola}
+ * <p>
  * The message is returned as a JSON object
  */
 
@@ -41,20 +41,12 @@ public class PokemonService extends AbstractPokemonService {
 
     PokemonService(DbClient dbClient) {
         super(dbClient);
-        }
-
-    /**
-     * Delete all Pokémons.
-     *
-     * @param request  the server request
-     * @param response the server response
-     */
-    @Override
-    protected void deleteAllPokemons(ServerRequest request, ServerResponse response) {
-        dbClient().execute(exec -> exec
-                        .createNamedDelete("delete-all")
-                        .execute())
-                .thenAccept(count -> response.send("Deleted: " + count + " values"))
-                .exceptionally(throwable -> sendError(throwable, response));
-        }
     }
+
+    @Override
+    protected void deleteAllPokemons(ServerRequest req, ServerResponse res) {
+        long count = dbClient().execute().createNamedDelete("delete-all")
+                .execute();
+        res.send("Deleted: " + count + " values");
+    }
+}

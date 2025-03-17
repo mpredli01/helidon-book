@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2024 Oracle and/or its affiliates.
+# Copyright (c) 2020, 2024 Oracle and/or its affiliates.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,6 +14,35 @@
 # limitations under the License.
 #
 
+# To configure an explicit port:
+# server.port: 8080
+
+server:
+  features:
+    security:
+      # Configuration of security integration with web server
+      defaults:
+        authenticate: true
+      paths:
+        - path: "/noRoles"
+          methods: [ "get" ]
+        - path: "/user[/{*}]"
+          methods: [ "get" ]
+          roles-allowed: [ "user" ]
+        - path: "/admin"
+          methods: [ "get" ]
+          roles-allowed: [ "admin" ]
+        - path: "/deny"
+          methods: [ "get" ]
+          roles-allowed: [ "deny" ]
+          audit: true
+        - path: "/noAuthn"
+          roles-allowed: [ "admin" ]
+          authentication-optional: true
+          audit: true
+        - path: "/static[/{*}]"
+          roles-allowed: "user"
+
 security:
   config:
     # Configuration of secured config (encryption of passwords in property files)
@@ -23,35 +52,13 @@ security:
     - http-basic-auth:
         realm: "helidon"
         users:
-          - login: "jack"
+          - login: "mike"
             password: "${CLEAR=password}"
             roles: [ "user", "admin" ]
-          - login: "jill"
+          - login: "rowena"
             password: "${CLEAR=password}"
             roles: [ "user" ]
-          - login: "john"
+          - login: "ian"
             password: "${CLEAR=password}"
             roles: [ ]
-  web-server:
-    # Configuration of integration with web server
-    defaults:
-      authenticate: true
-    paths:
-      - path: "/noRoles"
-        methods: [ "get" ]
-      - path: "/user[/{*}]"
-        methods: [ "get" ]
-        roles-allowed: [ "user" ]
-      - path: "/admin"
-        methods: [ "get" ]
-        roles-allowed: [ "admin" ]
-      - path: "/deny"
-        methods: [ "get" ]
-        roles-allowed: [ "deny" ]
-        audit: true
-      - path: "/noAuthn"
-        roles-allowed: [ "admin" ]
-        authentication-optional: true
-        audit: true
-      - path: "/static[/{*}]"
-        roles-allowed: "user"
+            

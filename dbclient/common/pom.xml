@@ -18,6 +18,6 @@
     <url>https://redlich.net</url>
 
     <properties>
-        <helidon.version>3.2.8</helidon.version>
+        <helidon.version>4.1.0</helidon.version>
     </properties>
 </project>

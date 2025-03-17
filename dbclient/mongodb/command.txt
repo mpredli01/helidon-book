@@ -1,1 +1,1 @@
-mvn exec:java -Dexec.mainClass=org.redlich.dbclient.mongodb.MongoDbExampleMain
+mvn exec:java -Dexec.mainClass=org.redlich.dbclient.mongodb.MongoDbApplication

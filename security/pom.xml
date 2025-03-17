@@ -23,7 +23,7 @@
         <exec.maven.plugin.version>3.4.1</exec.maven.plugin.version>
         <hamcrest.version>2.2</hamcrest.version>
         <lombok.version>1.18.26</lombok.version>
-        <mainClass>org.redlich.security.BasicAuthenticationConfig</mainClass>
+        <mainClass>org.redlich.security.ConfigAuthenticationApplication</mainClass>
     </properties>
 
     <dependencies>
@@ -84,7 +84,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>${exec.maven.plugin.version}</version>
                 <configuration>
-                  <mainClass>${mainClass}</mainClass>
+                    <mainClass>${mainClass}</mainClass>
                 </configuration>
             </plugin>
         </plugins>

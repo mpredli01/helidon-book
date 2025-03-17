@@ -51,7 +51,7 @@ public class DirectorySources {
         }
 
     public static void displaySplashScreen() {
-        String title = " Directory Source Example ";
+        String title = " Directory Sources Example ";
         int length = title.length();
 
         System.out.println();

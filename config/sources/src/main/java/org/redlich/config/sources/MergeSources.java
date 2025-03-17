@@ -72,7 +72,7 @@ public class MergeSources {
         }
 
     public static void displaySplashScreen() {
-        String title = " Merge Sources ";
+        String title = " Merge Sources Example ";
         int length = title.length();
 
         System.out.println();

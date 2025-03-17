@@ -20,12 +20,11 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-        <helidon.version>3.2.4</helidon.version>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <helidon.version>4.1.0</helidon.version>
         <exec.maven.plugin.version>3.4.1</exec.maven.plugin.version>
-        <junit.version>5.10.0</junit.version>
-        <exec.maven.plugin.version>3.4.1</exec.maven.plugin.version>
+        <junit.version>5.11.0</junit.version>
         <mainClass>org.redlich.dbclient.pokemons.PokemonMain</mainClass>
     </properties>
 

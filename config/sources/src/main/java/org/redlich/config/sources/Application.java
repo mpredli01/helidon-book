@@ -34,9 +34,9 @@ public class Application {
     public static void main(String[] args) {
         LogConfig.configureRuntime();
         displaySplashScreen();
+        DirectorySources.main(args);
         MergeSources.main(args);
         MultipleConfigSources.main(args);
-        DirectorySources.main(args);
         }
 
     public static void displaySplashScreen() {

@@ -31,6 +31,6 @@ public class BasicExampleBuilderTest extends BasicExampleTest {
 
     @SetUpServer
     public static void setup(WebServerConfig.Builder server) {
-        BasicAuthenticationConfig.setup(server);
+        ConfigAuthenticationApplication.setup(server);
         }
     }
